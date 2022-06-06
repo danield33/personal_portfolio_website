@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import themes from './theme/schema.json';
+import {setLocalStorage} from "./utils/storage";
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+setLocalStorage('themes', themes.light);
 root.render(
   <React.StrictMode>
     <App />

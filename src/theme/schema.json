@@ -1,0 +1,17 @@
+{
+  "light": {
+    "id": 1,
+    "name": "light",
+    "colors": {
+      "body": "#FFFFFF",
+      "text": "#000000",
+      "primary": "#037877",
+      "secondary": "#F55C38",
+      "link": {
+        "text": "#FFAD33",
+        "opacity": 1
+      }
+
+    }
+  }
+}
