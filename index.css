@@ -1,0 +1,10 @@
+.introContainer{
+    background: linear-gradient(310deg,
+    rgb(101, 232, 221)
+    0%,
+    rgb(31, 95, 115)
+    50%
+    );
+
+    height: 400px
+}
