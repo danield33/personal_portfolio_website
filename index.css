@@ -1,4 +1,35 @@
 .introContainer {
     background: linear-gradient(270deg, #00b2ff 10%, #00569a 100%);
-    min-height: 400px;
+    height: 100vh;
+}
+
+#navbar{
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+
+.scrolled{
+    background-color: white;
+}
+
+.scrollIndicator{
+    height: 50px;
+    width: 30px;
+    border: white solid 3px;
+    border-radius: 50px;
+}
+
+#scrollArrow{
+    transform: translate(0);
+    animation: moveDown 2s ease-out infinite;
+    animation-delay: 1s;
+}
+
+@keyframes moveDown{
+
+    80%{
+        transform: translate(0, 100%);
+    }
 }

@@ -6,14 +6,34 @@
     <title>Daniel Dawit</title>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" rel="stylesheet">
-    <link href="index.css" type="text/css" rel="stylesheet"/>
+    <link href="index.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
+<nav class="navbar navbar-expand-md fixed-top mx-5 border-bottom" id="navbar">
+    <a class="navbar-brand fw-semibold fs-5 text-white" href="#intro">Daniel Dawit</a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="container-fluid introContainer align-items-center d-flex justify-content-center">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link fs-5 text-white" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5 text-white" href="#">Blog</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <div class="row align-items-center justify-content-center align-text-center text-center">
+
+<div class="container-fluid introContainer d-flex flex-column" id="intro">
+
+    <div class="text-center justify-content-center d-flex flex-column align-items-center justify-content-center flex-fill">
         <p class="fw-bold fs-1 text-white">
             Daniel Dawit
         </p>
@@ -22,13 +42,30 @@
         </p>
     </div>
 
+    <div class="d-sm-none d-md-flex align-items-center justify-content-center">
+
+        <div class="scrollIndicator my-3">
+
+            <svg viewBox="-13.5 -5 100 60" preserveAspectRatio="none" id="scrollArrow">
+                <path d="M0,0 l35,50 l35,-50" fill="none" stroke="white" stroke-linecap="round" stroke-width="5" />
+            </svg>
+
+        </div>
+
+    </div>
+
 </div>
 
 
+
+<!--bootstrap-->
 <script crossorigin="anonymous"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<!--jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script src="index.js"></script>
 
 </body>
 </html>
