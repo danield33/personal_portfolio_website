@@ -11,7 +11,7 @@
 }
 
 .scrolled{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 .scrollIndicator{
@@ -32,4 +32,9 @@
     80%{
         transform: translate(0, 100%);
     }
+}
+
+#greeting{
+    background-color: #F55C38;
+    min-height: 300px
 }

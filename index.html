@@ -10,8 +10,8 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md fixed-top mx-5 border-bottom" id="navbar">
-    <a class="navbar-brand fw-semibold fs-5 text-white" href="#intro">Daniel Dawit</a>
+<nav class="navbar navbar-expand-md fixed-top mx-5 border-bottom px-3" id="navbar">
+    <a class="navbar-brand fw-bold fs-5 text-white" href="#intro">Daniel Dawit</a>
     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
             class="navbar-toggler"
             data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
@@ -21,10 +21,11 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link fs-5 text-white" href="#">Portfolio</a>
+                <a class="nav-link fs-5 text-white fw-semibold" href="#">Portfolio</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link fs-5 text-white" href="#">Blog</a>
+                <a class="nav-link fs-5 text-white fw-semibold" href="#">Blog</a>
             </li>
         </ul>
     </div>
@@ -42,17 +43,24 @@
         </p>
     </div>
 
-    <div class="d-sm-none d-md-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center">
 
-        <div class="scrollIndicator my-3">
+        <a class="scrollIndicator my-3" href="#greeting">
 
             <svg viewBox="-13.5 -5 100 60" preserveAspectRatio="none" id="scrollArrow">
                 <path d="M0,0 l35,50 l35,-50" fill="none" stroke="white" stroke-linecap="round" stroke-width="5" />
             </svg>
 
-        </div>
+        </a>
 
     </div>
+
+</div>
+
+<div id="greeting" class="d-flex justify-content-center align-items-center flex-column">
+
+    <h1 class="text-white">Hey, I'm Daniel</h1>
+    <p class="text-white">I'm a developer that loves learning new things</p>
 
 </div>
 
