@@ -6,13 +6,10 @@ function listenForScroll() {
             console.log(entry);
             const $findMeSec = $(entry.target);
 
-            $findMeSec.find
+            const socialElems = $findMeSec.find('condenseRight');
 
-            // const $target = $(entry.target);
-            // if (entry.isIntersecting && !$target.hasClass('start')) {
-            //     $target.css('visibility', 'visible').addClass('start')
-            //     observer.unobserve(entry.target);
-            // }
+
+
         })
 
 
