@@ -1,0 +1,111 @@
+:root {
+    --fade-duration: 1s;
+}
+
+.introContainer {
+    background: linear-gradient(270deg, #00b2ff 10%, #00569a 100%);
+    height: 100vh;
+}
+
+#navbar {
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+
+.scrolled {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.scrollIndicator {
+    height: 50px;
+    width: 30px;
+    border: white solid 3px;
+    border-radius: 50px;
+}
+
+#scrollArrow {
+    transform: translate(0);
+    animation: moveDown 2s ease-out infinite;
+    animation-delay: 1s;
+}
+
+@keyframes moveDown {
+
+    80% {
+        transform: translate(0, 100%);
+    }
+}
+
+#greeting {
+    background-color: #F55C38;
+    min-height: 300px
+}
+
+.fadeIn.start {
+    animation: fade-in;
+    animation-duration: var(--fade-duration);
+}
+
+.fadeIn {
+    visibility: hidden;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.curve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.curve svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 127px;
+}
+
+.curve .shape-fill {
+    fill: #F55C38;
+}
+
+.curveSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    padding-top: 150px;
+    /*padding-bottom: 50px;*/
+}
+
+
+#findMe {
+    /*background-color: #FFAD33;*/
+    background-color: white
+}
+
+#linkedin {
+    background: linear-gradient(300deg, #0072b1 10%, #00569a 100%);
+}
+
+#discord {
+    background: linear-gradient(300deg, #6e9ad0 10%, #537EB2FF 100%);
+}
+
