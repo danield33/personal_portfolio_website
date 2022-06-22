@@ -1,6 +1,6 @@
 function checkScroll() {
     const $navbar = $('#navbar');
-    const startScroll = $navbar.height()*3;
+    const startScroll = $navbar.height()*5;
 
     const classesToAdd = [
             'scrolled',
