@@ -100,3 +100,11 @@ body{
     /*background-color: #FFAD33;*/
     background-color: white
 }
+
+#linkedin{
+    background: linear-gradient(300deg, #0072b1 10%, #00569a 100%);
+}
+
+#discord{
+    background: linear-gradient(300deg, #628ec4 10%, #537EB2FF 100%);
+}
