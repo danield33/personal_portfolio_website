@@ -47,7 +47,6 @@ function discordButtonHover(){
         animation: false
     }).on('mouseenter', function(){
         const that = this;
-        console.log(12)
         $(this).popover('show');
         $(".popover").on('mouseleave', function(){
             $(that).popover('hide')

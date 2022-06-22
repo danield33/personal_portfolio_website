@@ -1,4 +1,4 @@
-:root{
+:root {
     --fade-duration: 1s;
 }
 
@@ -7,61 +7,61 @@
     height: 100vh;
 }
 
-#navbar{
+#navbar {
     transition: all 0.5s ease-out;
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
 }
 
-.scrolled{
+.scrolled {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-.scrollIndicator{
+.scrollIndicator {
     height: 50px;
     width: 30px;
     border: white solid 3px;
     border-radius: 50px;
 }
 
-#scrollArrow{
+#scrollArrow {
     transform: translate(0);
     animation: moveDown 2s ease-out infinite;
     animation-delay: 1s;
 }
 
-@keyframes moveDown{
+@keyframes moveDown {
 
-    80%{
+    80% {
         transform: translate(0, 100%);
     }
 }
 
-#greeting{
+#greeting {
     background-color: #F55C38;
     min-height: 300px
 }
 
-.fadeIn.start{
+.fadeIn.start {
     animation: fade-in;
     animation-duration: var(--fade-duration);
 }
 
-.fadeIn{
+.fadeIn {
     visibility: hidden;
 }
 
-@keyframes fade-in{
-    0%{
+@keyframes fade-in {
+    0% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 100%;
     }
 }
 
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -96,15 +96,16 @@ body{
 }
 
 
-#findMe{
+#findMe {
     /*background-color: #FFAD33;*/
     background-color: white
 }
 
-#linkedin{
+#linkedin {
     background: linear-gradient(300deg, #0072b1 10%, #00569a 100%);
 }
 
-#discord{
-    background: linear-gradient(300deg, #628ec4 10%, #537EB2FF 100%);
+#discord {
+    background: linear-gradient(300deg, #6e9ad0 10%, #537EB2FF 100%);
 }
+
