@@ -35,7 +35,7 @@
 <div class="container-fluid introContainer d-flex flex-column" id="intro">
 
     <div class="text-center justify-content-center d-flex flex-column align-items-center justify-content-center flex-fill">
-        <p class="fw-bold fs-1 text-white">
+        <p class="fw-bold fs-1 text-white" style="--fade-duration: 5s">
             Daniel Dawit
         </p>
         <p class="fw-semibold fs-3 text-white">
@@ -57,10 +57,10 @@
 
 </div>
 
-<div id="greeting" class="d-flex justify-content-center align-items-center flex-column">
+<div id="greeting" class="d-flex justify-content-center align-items-center flex-column container-fluid">
 
-    <h1 class="text-white">Hey, I'm Daniel</h1>
-    <p class="text-white">I'm a developer that loves learning new things</p>
+    <h1 class="text-white fadeIn">Hey, I'm Daniel</h1>
+    <p class="text-white col-5 text-center fadeIn" style="--fade-duration: 2s">I'm a freelance developer with a passion to create robust and efficient applications</p>
 
 </div>
 
@@ -74,6 +74,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="index.js"></script>
+<script src="scripts/animateOnView.js"></script>
+
 
 </body>
 </html>

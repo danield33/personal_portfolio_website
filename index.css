@@ -1,3 +1,7 @@
+:root{
+    --fade-duration: 1s;
+}
+
 .introContainer {
     background: linear-gradient(270deg, #00b2ff 10%, #00569a 100%);
     height: 100vh;
@@ -37,4 +41,22 @@
 #greeting{
     background-color: #F55C38;
     min-height: 300px
+}
+
+.fadeIn.start{
+    animation: fade-in;
+    animation-duration: var(--fade-duration);
+}
+
+.fadeIn{
+    visibility: hidden;
+}
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
 }
