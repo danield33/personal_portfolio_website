@@ -19,6 +19,8 @@ function listenForScroll() {
         threshold: 0.3
     });
 
+    $('#social-media-sidebar')
+
     observer.observe($('#findMe')[0])
 
 }
