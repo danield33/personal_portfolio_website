@@ -109,3 +109,16 @@ body {
     background: linear-gradient(300deg, #6e9ad0 10%, #537EB2FF 100%);
 }
 
+
+.condenseRight{
+    animation: reveal 1s forwards;
+}
+
+@keyframes reveal{
+    from{
+        clip-path: inset(0 100% 0 0);
+    }
+    to{
+        clip-path: inset(0 0 0 0);
+    }
+}
