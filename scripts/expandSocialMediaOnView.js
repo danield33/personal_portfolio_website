@@ -27,12 +27,13 @@ function listenForScroll() {
                     .animate({
                         'top': ($socialElem[0].getBoundingClientRect().y-$(window).height()/2)+'px',
                         'left': (boundingClientRect.x)+'px',
-                        'height': '124px'
+                        // 'height': '124px'
                     }, 500, 'linear', () => {
                         console.log('cb')
+                        $socialElem.parent().css('opacity', '100%').addClass('condenseRight')
                         // setTimeout(() => {
                             clone.remove();
-                            $socialElem.parent().addClass('condenseRight').css('opacity', '100%')//.removeClass('invisible')
+                            // $socialElem.parent().addClass('condenseRight').css('opacity', '100%')//.removeClass('invisible')
                         // }, 100)
                     })//.removeClass('invisible');
             }else{
@@ -84,7 +85,7 @@ function listenForScroll() {
 
 }
 
-listenForScroll()
+// listenForScroll()
 
 
 function isInViewport(element) {
