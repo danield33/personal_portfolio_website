@@ -1,12 +1,36 @@
 function listenForScroll() {
 
+    const $social = $('#social-media-sidebar');
+    const $linkedin = $('#linkedin-icon');
+    const $linkedinSide = $('.linkedin.side');
     const observer = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
-            console.log(entry);
-            const $findMeSec = $(entry.target);
+            if(!entry.isIntersecting) return
 
-            const socialElems = $findMeSec.find('condenseRight');
+            console.log(entry, document.body.scrollHeight, document.body.offsetHeight, );
+
+            const $socialElem = $(entry.target);
+            const position = $socialElem.position();
+            const elemID = $socialElem.attr('id');
+            const sideBarClassName = elemID.split('-')[0] + ".side";
+            const sideBarElem = $(`.${sideBarClassName}`);
+
+            // console.log(position.top);
+            // sideBarElem.addClass('position-absolute')
+            //     .animate({
+            //     'top': ($(window).height()-entry.boundingClientRect.y)+'px',
+            //     'left': entry.boundingClientRect.x+'px',
+            // }, 2000, 'swing', () => {
+            //     // console.log('cb')
+            // });
+
+            // console.log(position)
+            // console.log($socialElem)
+            // console.log($linkedin.position());
+            // console.log($linkedinSide.position(), 'side')
+
+            // const socialElems = $findMeSec.find('condenseRight');
 
 
 
@@ -19,11 +43,12 @@ function listenForScroll() {
         threshold: 0.3
     });
 
-    $('#social-media-sidebar')
 
-    observer.observe($('#findMe')[0])
+
+
+
+    $('#findMe i').each((index, elem) => observer.observe(elem))
 
 }
-
 
 listenForScroll()

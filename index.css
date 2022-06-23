@@ -109,6 +109,10 @@ body {
     background: linear-gradient(300deg, #6e9ad0 10%, #537EB2FF 100%);
 }
 
+#github{
+    background: linear-gradient(300deg, #363638 10%, #000000 100%);
+}
+
 
 .condenseRight{
     animation: reveal 1s forwards;
