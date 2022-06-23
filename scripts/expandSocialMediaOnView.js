@@ -15,15 +15,16 @@ function listenForScroll() {
             const elemID = $socialElem.attr('id');
             const sideBarClassName = elemID.split('-')[0] + ".side";
             const sideBarElem = $(`.${sideBarClassName}`);
+            console.log($socialElem[0].getBoundingClientRect());
 
-            // console.log(position.top);
-            // sideBarElem.addClass('position-absolute')
-            //     .animate({
-            //     'top': ($(window).height()-entry.boundingClientRect.y)+'px',
-            //     'left': entry.boundingClientRect.x+'px',
-            // }, 2000, 'swing', () => {
-            //     // console.log('cb')
-            // });
+            console.log(position.top);
+            sideBarElem.addClass('position-absolute')
+                .animate({
+                'top': ($socialElem[0].getBoundingClientRect().y-$(window).height()/2)+'px',
+                'left': entry.boundingClientRect.x+'px',
+            }, 2000, 'swing', () => {
+                // console.log('cb')
+            });
 
             // console.log(position)
             // console.log($socialElem)
