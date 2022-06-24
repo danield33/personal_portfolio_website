@@ -10,53 +10,62 @@ function listenForScroll() {
             const position = $socialElem.position();
             const elemID = $socialElem.attr('id');
             const sideBarClassName = elemID.split('-')[0] + ".side";
-            const sideBarElem = $(`.${sideBarClassName}`);
+            const sideBarElem = $(`#linkedinSide`);
             console.log(entry.isIntersecting)
 
-            if(entry.isIntersecting){
-                // console.log(entry, scrollHeight, document.body.offsetHeight, );
-                const clone = sideBarElem.clone().insertAfter(sideBarElem);
+            const $appendTo = $('#linkedinAppend')
 
+            if (entry.isIntersecting) {
+
+
+                // $('#linkedinTemplate').contents().clone().insertAfter('#linkedinAppend')
+
+                // return;
+                // console.log(entry, scrollHeight, document.body.offsetHeight, );
                 sideBarElem.addClass('invisible')
+
+                const clone = sideBarElem.clone().removeClass('invisible').insertAfter(sideBarElem);
+
                 // console.log($socialElem.offset(), 'offset');
 
                 // console.log(position.top);//
                 const boundingClientRect = entry.boundingClientRect;
-                console.log($socialElem.height());
+                console.log(boundingClientRect);
+
                 clone.addClass('position-absolute')
                     .animate({
-                        'top': ($socialElem[0].getBoundingClientRect().y-$(window).height()/2)+'px',
-                        'left': (boundingClientRect.x)+'px',
-                        // 'height': '124px'
-                    }, 500, 'linear', () => {
+                        'top': (boundingClientRect.y - $(window).height() / 2 + 30) + 'px',
+                        'left': (boundingClientRect.x) + 'px',
+                        'height': '124px'
+                    }, 500, 'swing', () => {
                         console.log('cb')
-                        $socialElem.parent().css('opacity', '100%').addClass('condenseRight')
-                        // setTimeout(() => {
+                        // $socialElem.parent().css('opacity', '100%').addClass('condenseRight')
+                        setTimeout(() => {
+                            // clone.remove();
+                            $('#linkedinTemplate').contents().clone().addClass('condenseRight').insertAfter('#linkedinAppend')
                             clone.remove();
-                            // $socialElem.parent().addClass('condenseRight').css('opacity', '100%')//.removeClass('invisible')
-                        // }, 100)
-                    })//.removeClass('invisible');
-            }else{
-                // return;
-                // if(isInViewport($socialElem[0])) return;
+                        }, 300)
+                    })
+            } else {
+                const clone = sideBarElem.clone()
+                    .removeClass('invisible')
+                    .addClass('position-absolute')
+                clone.insertAfter($appendTo)
+                // $appendTo.append(clone);
 
-                const clone = sideBarElem.clone().removeClass('invisible').addClass('position-absolute').insertAfter($socialElem);
-                clone.animate({
-                    'top': '50%',
-                    'left': '0px'
-                }, 1000, 'linear', () => {
-                    sideBarElem.removeClass('invisible')
-                })
-                // sideBarElem.animate({
-                //         'top': '50%',
-                //         'left': '0px',
-                //     }, 100, 'swing', () => {
-                //         // console.log('cb')
-                //         sideBarElem.removeClass('position-absolute');
-                //     })
+                    clone.animate({
+                        'top': '50%',
+                        'left': '0px'
+                    }, 1000, 'linear', () => {
+
+                        console.log(1)
+                        $appendTo.siblings('div').first().remove();
+                        sideBarElem.removeClass('invisible')
+
+                    })
+
 
             }
-
 
 
             // console.log(position)
@@ -65,7 +74,6 @@ function listenForScroll() {
             // console.log($linkedinSide.position(), 'side')
 
             // const socialElems = $findMeSec.find('condenseRight');
-
 
 
         })
@@ -78,14 +86,11 @@ function listenForScroll() {
     });
 
 
-
-
-
-    $('#findMe i').each((index, elem) => observer.observe(elem))
+    $('#linkedinAppend').each((index, elem) => observer.observe(elem))
 
 }
 
-// listenForScroll()
+listenForScroll()
 
 
 function isInViewport(element) {
