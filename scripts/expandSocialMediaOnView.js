@@ -26,7 +26,7 @@ function listenForScroll() {
 
 }
 
-function onShrinkFinish(){
+function onShrinkFinish() {
     const $iconBars = $('#iconBars');
     const $socialBars = $iconBars.children('div');
 
@@ -50,7 +50,7 @@ function shrinkElement() {
 
 }
 
-function onExpandFinish(){
+function onExpandFinish() {
     const $iconBars = $('#iconBars');
     const $socialBars = $iconBars.children('div');
     const $templateContent = $iconBars.children('template');
@@ -69,8 +69,10 @@ function onExpandFinish(){
     }, 500, 'swing', () => {
         $socialBars.attr('style', "")
     })
+    discordButtonHover();
 
 }
+
 function expandElement() {
 
     const $iconBars = $('#iconBars');
@@ -92,7 +94,7 @@ function expandElement() {
             height: '100%',
             width: '80%'
         }, 500, 'swing', () => {
-            if(once === 0){
+            if (once === 0) {
                 onExpandFinish()
             }
             once++;
