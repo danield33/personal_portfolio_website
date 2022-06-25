@@ -6,9 +6,9 @@ function listenForScroll() {
 
             console.log('see')
             $('#iconBars').children('div').stop()
-            if(entry.isIntersecting && entry.time > 500){
+            if (entry.isIntersecting && entry.time > 500) {
                 expandElement();
-            }else if(!entry.isIntersecting){
+            } else if (!entry.isIntersecting) {
                 shrinkElement();
             }
 
@@ -22,12 +22,12 @@ function listenForScroll() {
     });
 
 
-    $('#findMe').each((index, elem) => observer.observe(elem))
+    $('#findMe').each((index, elem) => observer.observe(elem));
 
 }
 
 function shrinkElement() {
-    const $socialBars = $('#iconBars').children('div')
+    const $socialBars = $('#iconBars').children('div');
 
     $socialBars.addClass('position-absolute')
         .animate({
@@ -36,10 +36,10 @@ function shrinkElement() {
             width: '0%',
             height: '0%'
         }, 500, 'swing', () => {
-            $('#iconBars').removeClass('container').addClass('icon-bar')
+            $('#iconBars').removeClass('container').addClass('icon-bar');
             $socialBars.css('width', '100%').height('height', '100%');
             $socialBars.attr('class', "")
-            $socialBars.children('.icon').removeClass('fa-4x')
+            $socialBars.children('.icon').removeClass('fa-4x');
             $socialBars.children('[icon-content]').remove();
         })
 
@@ -53,22 +53,22 @@ function expandElement() {
     const $templateContent = $iconBars.children('template');
     const $templateCloneContent = $templateContent.contents().clone();
     const $socialBars = $iconBars.children('div');
-    $iconBars.removeClass('icon-bar').addClass('container')
+    $iconBars.removeClass('icon-bar').addClass('container');
     const boundingClientRect = $iconBars[0].getBoundingClientRect();
 
-    $socialBars.attr('class', $templateCloneContent[1].className)// = $templateCloneContent[1].className
+    $socialBars.attr('class', $templateCloneContent[1].className);
 
     let once = 0;
     $socialBars.addClass('position-absolute')
         .css('width', '0%')
         .animate({
-            top: `${$(window).height() - boundingClientRect.y+500}px`,
+            top: `${$(window).height() - boundingClientRect.y + 500}px`,
             left: `${boundingClientRect.x}px`,
             height: '100%',
             width: '80%'
         }, 500, 'swing', () => {
 
-            if(once > 0) return;
+            if (once > 0) return;
 
             $socialBars.removeClass('position-absolute');
             $socialBars.children('.icon').remove();
@@ -88,37 +88,6 @@ function expandElement() {
 
 }
 
-$('#iconBars').append($('#iconBars').children('template').contents().clone())
+$('#iconBars').append($('#iconBars').children('template').contents().clone());
 listenForScroll();
-// setTimeout(() => {
-//     shrinkElement()
-// }, 1000)
 
-
-// let time = 1500;
-// setTimeout(() => {
-//     shrinkElement()
-//     setTimeout(() => {
-//         expandElement()
-//         setTimeout(() => {
-//             shrinkElement();
-//             setTimeout(() => {
-//                 expandElement();
-//             }, time);
-//         }, time);
-//
-//     }, time);
-// }, time)
-
-// listenForScroll()
-
-
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= ((window.innerHeight + rect.height) || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
