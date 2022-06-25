@@ -4,7 +4,8 @@ function listenForScroll() {
 
         entries.forEach(entry => {
 
-            $('#linkedin').stop()
+            console.log('see')
+            $('#iconBars').children('div').stop()
             if(entry.isIntersecting && entry.time > 500){
                 expandElement();
             }else if(!entry.isIntersecting){
@@ -26,9 +27,9 @@ function listenForScroll() {
 }
 
 function shrinkElement() {
-    const $linkedin = $('#linkedin');
+    const $socialBars = $('#iconBars').children('div')
 
-    $linkedin.addClass('position-absolute')
+    $socialBars.addClass('position-absolute')
         .animate({
             bottom: `${$(window).height() - window.pageYOffset + 50}px`,
             left: '0%',
@@ -36,10 +37,10 @@ function shrinkElement() {
             height: '0%'
         }, 500, 'swing', () => {
             $('#iconBars').removeClass('container').addClass('icon-bar')
-            $linkedin.css('width', '100%').height('height', '100%');
-            $linkedin[0].className = "";
-            $linkedin.children('.linkedin').removeClass('fa-4x')
-            $linkedin.children('#linkedinContent').remove();
+            $socialBars.css('width', '100%').height('height', '100%');
+            $socialBars.attr('class', "")
+            $socialBars.children('.icon').removeClass('fa-4x')
+            $socialBars.children('[icon-content]').remove();
         })
 
 
@@ -47,17 +48,18 @@ function shrinkElement() {
 
 function expandElement() {
 
-
-    const $linkedinTemplate = $('#linkedinTemplate');
-    const $linkedinCloneContent = $linkedinTemplate.contents().clone();
-    const $linkedin = $('#linkedin');
     const $iconBars = $('#iconBars');
+
+    const $templateContent = $iconBars.children('template');
+    const $templateCloneContent = $templateContent.contents().clone();
+    const $socialBars = $iconBars.children('div');
     $iconBars.removeClass('icon-bar').addClass('container')
     const boundingClientRect = $iconBars[0].getBoundingClientRect();
 
-    $linkedin[0].className = $linkedinCloneContent[1].className
+    $socialBars.attr('class', $templateCloneContent[1].className)// = $templateCloneContent[1].className
 
-    $linkedin.addClass('position-absolute')
+    let once = 0;
+    $socialBars.addClass('position-absolute')
         .css('width', '0%')
         .animate({
             top: `${$(window).height() - boundingClientRect.y+500}px`,
@@ -66,22 +68,28 @@ function expandElement() {
             width: '80%'
         }, 500, 'swing', () => {
 
-            $linkedin.removeClass('position-absolute');
-            $linkedin.children('i.linkedin').remove();
+            if(once > 0) return;
 
-            $linkedin.append($linkedinCloneContent.children('#linkedinContent').parent().html());
-            $linkedin.animate({
+            $socialBars.removeClass('position-absolute');
+            $socialBars.children('.icon').remove();
+
+
+            $socialBars.each((index, obj) => {
+                $(obj).append($($templateCloneContent.children('[icon-content]').parent().get(index)).html())
+            })
+            once++;
+            $socialBars.animate({
                 width: '100%'
             }, 500, 'swing', () => {
-                $linkedin[0].style = undefined
+                $socialBars.attr('style', "")
             })
 
-        })
+        });
 
 }
 
 $('#iconBars').append($('#iconBars').children('template').contents().clone())
-// listenForScroll();
+listenForScroll();
 // setTimeout(() => {
 //     shrinkElement()
 // }, 1000)
