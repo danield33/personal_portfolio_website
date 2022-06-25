@@ -4,7 +4,7 @@ function listenForScroll() {
 
         entries.forEach(entry => {
 
-            console.log('see')
+
             $('#iconBars').children('div').stop()
             if (entry.isIntersecting && entry.time > 500) {
                 expandElement();
@@ -26,6 +26,17 @@ function listenForScroll() {
 
 }
 
+function onShrinkFinish(){
+    const $iconBars = $('#iconBars');
+    const $socialBars = $iconBars.children('div');
+
+    $iconBars.removeClass('container').addClass('icon-bar');
+    $socialBars.css('width', '100%').height('height', '100%');
+    $socialBars.attr('class', "")
+    $socialBars.children('.icon').removeClass('fa-4x');
+    $socialBars.children('[icon-content]').remove();
+}
+
 function shrinkElement() {
     const $socialBars = $('#iconBars').children('div');
 
@@ -35,17 +46,31 @@ function shrinkElement() {
             left: '0%',
             width: '0%',
             height: '0%'
-        }, 500, 'swing', () => {
-            $('#iconBars').removeClass('container').addClass('icon-bar');
-            $socialBars.css('width', '100%').height('height', '100%');
-            $socialBars.attr('class', "")
-            $socialBars.children('.icon').removeClass('fa-4x');
-            $socialBars.children('[icon-content]').remove();
-        })
-
+        }, 500, 'swing', onShrinkFinish)
 
 }
 
+function onExpandFinish(){
+    const $iconBars = $('#iconBars');
+    const $socialBars = $iconBars.children('div');
+    const $templateContent = $iconBars.children('template');
+    const $templateCloneContent = $templateContent.contents().clone();
+
+
+    $socialBars.removeClass('position-absolute');
+    $socialBars.children('.icon').remove();
+
+
+    $socialBars.each((index, obj) => {
+        $(obj).empty().append($($templateCloneContent.children('[icon-content]').parent().get(index)).html())
+    })
+    $socialBars.animate({
+        width: '100%'
+    }, 500, 'swing', () => {
+        $socialBars.attr('style', "")
+    })
+
+}
 function expandElement() {
 
     const $iconBars = $('#iconBars');
@@ -67,23 +92,10 @@ function expandElement() {
             height: '100%',
             width: '80%'
         }, 500, 'swing', () => {
-
-            if (once > 0) return;
-
-            $socialBars.removeClass('position-absolute');
-            $socialBars.children('.icon').remove();
-
-
-            $socialBars.each((index, obj) => {
-                $(obj).append($($templateCloneContent.children('[icon-content]').parent().get(index)).html())
-            })
+            if(once === 0){
+                onExpandFinish()
+            }
             once++;
-            $socialBars.animate({
-                width: '100%'
-            }, 500, 'swing', () => {
-                $socialBars.attr('style', "")
-            })
-
         });
 
 }
