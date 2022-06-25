@@ -81,60 +81,73 @@
 
         <h1 class="fadeIn text-black">Find Me</h1>
 
-        <div class="p-5 rounded-3 d-flex flex-column flex-sm-column flex-md-row align-items-center container mx-5 my-3"
-             id="linkedin" style="">
+        <div class="container" id="iconBars">
 
-            <i class="linkedin fa fa-linkedin fa-4x" id="linkedin-icon"></i>
+            <template id="linkedinTemplate">
+                <div class="p-5 rounded-3 d-flex flex-column flex-sm-column flex-md-row container align-items-center my-3"
+                     id="linkedin">
+
+                    <i class="icon fa fa-linkedin fa-4x" id="linkedin-icon"></i>
 
 
-            <div class="d-flex flex-column px-5 align-items-md-start align-items-center" id="linkedinContent">
-                <span class="text-white fs-2">LinkedIn</span>
-                <a class="btn btn-outline-light btn-lg" href="https://www.linkedin.com/in/daniel-dawit/"
-                   target="_blank">Connect with Me!</a>
-            </div>
+                    <div iconContent="true" class="d-flex flex-column px-5 align-items-md-start align-items-center"  id="linkedinContent">
+                        <span class="text-white fs-2">LinkedIn</span>
+                        <a class="btn btn-outline-light btn-lg" href="https://www.linkedin.com/in/daniel-dawit/"
+                           target="_blank">Connect with Me!</a>
+                    </div>
+
+                </div>
+            </template>
+
+            <template id="githubTemplate">
+                <div class="p-5 rounded-3 d-flex flex-column flex-sm-column flex-md-row container align-items-center my-3"
+                     id="github">
+
+                    <i class="icon fa-brands fa-github fa-4x" id="github-icon"></i>
+
+                    <div iconContent="true" class="d-flex flex-column px-5 align-items-md-start align-items-center">
+                        <span class="text-white fs-2">Github</span>
+
+                        <a class="btn btn-outline-light btn-lg" href="https://github.com/danield33"
+                           target="_blank">Follow Me!</a>
+                    </div>
+
+
+                </div>
+            </template>
+
+            <template id="discordTemplate">
+
+                <div class="p-5 rounded-3 d-flex flex-column flex-sm-column flex-md-row container align-items-center my-3"
+                     id="discord">
+
+                    <i class="discord fa-brands fa-discord fa-4x" id="discord-icon"></i>
+
+
+                    <div iconContent="true" class="d-flex flex-column px-5 align-items-md-start align-items-center">
+                        <span class="text-white fs-2">Discord</span>
+                        <button class="btn btn-outline-light btn-lg"
+                                data-bs-content="Copies discord discriminator to clipboard and opens a new link"
+                                data-bs-toggle="popover"
+                                data-popper-placement="bottom"
+                                id="discordButton"
+                                onclick="copyToClipboard('ProNanigans#0735')"
+                                type="button"
+                        >
+                            Friend Me!
+                        </button>
+
+                    </div>
+
+
+                </div>
+            </template>
 
         </div>
 
-<!--        <span class="container-fluid" id="linkedinAppend">-->
-<!--        </span>-->
 
-
-        <!--        <div class="invisible rounded-3 p-5 d-flex flex-column flex-sm-column flex-md-row align-items-center container mx-5 my-3" id="github">-->
-
-        <!--            <i class="discord fa-brands fa-github fa-4x" id="github-icon"></i>-->
-
-        <!--            <div class="d-flex flex-column px-5 align-items-md-start align-items-center">-->
-        <!--                <span class="text-white fs-2">Github</span>-->
-
-        <!--                <a class="btn btn-outline-light btn-lg" href="https://github.com/danield33"-->
-        <!--                       target="_blank">Follow Me!</a>-->
-        <!--            </div>-->
-
-
-        <!--        </div>-->
-
-        <!--        <div class="invisible rounded-3 p-5 d-flex flex-column flex-sm-column flex-md-row align-items-center container mx-5 my-3" id="discord">-->
-
-        <!--            <i class="discord fa-brands fa-discord fa-4x" id="discord-icon"></i>-->
-
-
-        <!--            <div class="d-flex flex-column px-5 align-items-md-start align-items-center">-->
-        <!--                <span class="text-white fs-2">Discord</span>-->
-        <!--                <button class="btn btn-outline-light btn-lg"-->
-        <!--                        data-bs-content="Copies discord discriminator to clipboard and opens a new link"-->
-        <!--                        data-bs-toggle="popover"-->
-        <!--                        data-popper-placement="bottom"-->
-        <!--                        id="discordButton"-->
-        <!--                        onclick="copyToClipboard('ProNanigans#0735')"-->
-        <!--                        type="button"-->
-        <!--                >-->
-        <!--                    Friend Me!-->
-        <!--                </button>-->
-
-        <!--            </div>-->
-
-
-        <!--        </div>-->
+        <!--        <span class="container-fluid" id="linkedinAppend">-->
+        <!--        </span>-->
 
 
     </div>
@@ -144,16 +157,13 @@
 
 
 <!-- The social media icon bar -->
-<div class="icon-bar d-none d-md-block" id="social-media-sidebar">
-    <a class="linkedin side" href="#" id="linkedinSide">
-        <i class="fa fa-linkedin"></i>
-
-
-
-    </a>
-    <!--    <a href="#" class="github side"><i class="fa-brands fa-github"></i></a>-->
-    <!--    <a href="#" class="discord side"><i class="fa-brands fa-discord"></i></a>-->
-</div>
+<!--<div class="icon-bar d-none d-md-block" id="social-media-sidebar">-->
+<!--    <a class="linkedin side" href="#" id="linkedinSide">-->
+<!--        <i class="fa fa-linkedin"></i>-->
+<!--    </a>-->
+<!--    &lt;!&ndash;    <a href="#" class="github side"><i class="fa-brands fa-github"></i></a>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <a href="#" class="discord side"><i class="fa-brands fa-discord"></i></a>&ndash;&gt;-->
+<!--</div>-->
 
 <br><br><br><br><br>
 
@@ -169,7 +179,6 @@
 <script src="scripts/animateOnView.js"></script>
 <script src="scripts/popovers.js"></script>
 <script src="scripts/expandSocialMediaOnView.js"></script>
-
 
 </body>
 </html>

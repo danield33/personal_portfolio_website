@@ -1,80 +1,15 @@
 function listenForScroll() {
 
-    const $social = $('#social-media-sidebar');
-    const $linkedin = $('#linkedin-icon');
-    const $linkedinSide = $('.linkedin.side');
     const observer = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
-            const $socialElem = $(entry.target);
-            const position = $socialElem.position();
-            const elemID = $socialElem.attr('id');
-            const sideBarClassName = elemID.split('-')[0] + ".side";
-            const sideBarElem = $(`#linkedinSide`);
-            console.log(entry.isIntersecting)
 
-            const $appendTo = $('#linkedinAppend')
-
-            if (entry.isIntersecting) {
-
-
-                // $('#linkedinTemplate').contents().clone().insertAfter('#linkedinAppend')
-
-                // return;
-                // console.log(entry, scrollHeight, document.body.offsetHeight, );
-                sideBarElem.addClass('invisible')
-
-                const clone = sideBarElem.clone().removeClass('invisible').insertAfter(sideBarElem);
-
-                // console.log($socialElem.offset(), 'offset');
-
-                // console.log(position.top);//
-                const boundingClientRect = entry.boundingClientRect;
-                console.log(boundingClientRect);
-
-                clone.addClass('position-absolute')
-                    .animate({
-                        'top': (boundingClientRect.y - $(window).height() / 2 + 30) + 'px',
-                        'left': (boundingClientRect.x) + 'px',
-                        'height': '124px'
-                    }, 500, 'swing', () => {
-                        console.log('cb')
-                        // $socialElem.parent().css('opacity', '100%').addClass('condenseRight')
-                        setTimeout(() => {
-                            // clone.remove();
-                            $('#linkedinTemplate').contents().clone().addClass('condenseRight').insertAfter('#linkedinAppend')
-                            clone.remove();
-                        }, 300)
-                    })
-            } else {
-                const clone = sideBarElem.clone()
-                    .removeClass('invisible')
-                    .addClass('position-absolute')
-                clone.insertAfter($appendTo)
-                // $appendTo.append(clone);
-
-                    clone.animate({
-                        'top': '50%',
-                        'left': '0px'
-                    }, 1000, 'linear', () => {
-
-                        console.log(1)
-                        $appendTo.siblings('div').first().remove();
-                        sideBarElem.removeClass('invisible')
-
-                    })
-
-
+            $('#linkedin').stop()
+            if(entry.isIntersecting && entry.time > 500){
+                expandElement();
+            }else if(!entry.isIntersecting){
+                shrinkElement();
             }
-
-
-            // console.log(position)
-            // console.log($socialElem)
-            // console.log($linkedin.position());
-            // console.log($linkedinSide.position(), 'side')
-
-            // const socialElems = $findMeSec.find('condenseRight');
-
 
         })
 
@@ -82,15 +17,92 @@ function listenForScroll() {
     }, {
         root: null,
         rootMargin: '0px',
-        threshold: 0.3
+        threshold: 0
     });
 
 
-    $('#linkedinAppend').each((index, elem) => observer.observe(elem))
+    $('#findMe').each((index, elem) => observer.observe(elem))
 
 }
 
-listenForScroll()
+function shrinkElement() {
+    const $linkedin = $('#linkedin');
+
+    $linkedin.addClass('position-absolute')
+        .animate({
+            bottom: `${$(window).height() - window.pageYOffset + 50}px`,
+            left: '0%',
+            width: '0%',
+            height: '0%'
+        }, 500, 'swing', () => {
+            $('#iconBars').removeClass('container').addClass('icon-bar')
+            $linkedin.css('width', '100%').height('height', '100%');
+            $linkedin[0].className = "";
+            $linkedin.children('.linkedin').removeClass('fa-4x')
+            $linkedin.children('#linkedinContent').remove();
+        })
+
+
+}
+
+function expandElement() {
+
+
+    const $linkedinTemplate = $('#linkedinTemplate');
+    const $linkedinCloneContent = $linkedinTemplate.contents().clone();
+    const $linkedin = $('#linkedin');
+    const $iconBars = $('#iconBars');
+    $iconBars.removeClass('icon-bar').addClass('container')
+    const boundingClientRect = $iconBars[0].getBoundingClientRect();
+
+    $linkedin[0].className = $linkedinCloneContent[1].className
+
+    $linkedin.addClass('position-absolute')
+        .css('width', '0%')
+        .animate({
+            top: `${$(window).height() - boundingClientRect.y+500}px`,
+            left: `${boundingClientRect.x}px`,
+            height: '100%',
+            width: '80%'
+        }, 500, 'swing', () => {
+
+            $linkedin.removeClass('position-absolute');
+            $linkedin.children('i.linkedin').remove();
+
+            $linkedin.append($linkedinCloneContent.children('#linkedinContent').parent().html());
+            $linkedin.animate({
+                width: '100%'
+            }, 500, 'swing', () => {
+                $linkedin[0].style = undefined
+            })
+
+        })
+
+}
+
+$('#iconBars').append($('#iconBars').children('template').contents().clone())
+// listenForScroll();
+// setTimeout(() => {
+//     shrinkElement()
+// }, 1000)
+
+
+// let time = 1500;
+// setTimeout(() => {
+//     shrinkElement()
+//     setTimeout(() => {
+//         expandElement()
+//         setTimeout(() => {
+//             shrinkElement();
+//             setTimeout(() => {
+//                 expandElement();
+//             }, time);
+//         }, time);
+//
+//     }, time);
+// }, time)
+
+// listenForScroll()
 
 
 function isInViewport(element) {

@@ -103,6 +103,7 @@ body {
 
 #linkedin {
     background: linear-gradient(300deg, #0072b1 10%, #00569a 100%);
+    /*transition: all 2s ease-out;*/
 }
 
 #discord {
@@ -115,7 +116,7 @@ body {
 
 
 .condenseRight{
-    animation: reveal 1s forwards;
+    animation: reveal 0.5s forwards;
 }
 
 @keyframes reveal{

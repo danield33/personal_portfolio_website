@@ -4,10 +4,12 @@
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    left: 0;
+    /*transition: all ease-out 5s;*/
 }
 
 /* Style the icon bar links */
-.icon-bar a {
+.icon-bar div {
     display: block;
     text-align: center;
     padding: 16px;
@@ -33,7 +35,7 @@
     background: #000000;
 }
 
-.linkedin {
+.icon {
     color: white;
 }
 
