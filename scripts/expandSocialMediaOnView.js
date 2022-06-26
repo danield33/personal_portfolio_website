@@ -35,7 +35,7 @@ function onShrinkFinish() {
     $socialBars.attr('class', "")
     $socialBars.children('.icon').removeClass('fa-4x');
     $socialBars.children('[icon-content]').remove();
-    $socialBars.attr('style', "")
+    // $socialBars.attr('style', "")
     $socialBars.each((inx, obj) => {
         const $obj = $(obj);
         $obj.hover(() => {
@@ -113,7 +113,7 @@ function expandElement() {
         });
 
 }
-const $iconBars = $('#iconBars');
-$iconBars.append($iconBars.children('template').contents().clone());
+// const $iconBars = ;
+$('#iconBars').append($('#iconBars').children('template').contents().clone());
 listenForScroll();
 
