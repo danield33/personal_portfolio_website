@@ -35,6 +35,16 @@ function onShrinkFinish() {
     $socialBars.attr('class', "")
     $socialBars.children('.icon').removeClass('fa-4x');
     $socialBars.children('[icon-content]').remove();
+    $socialBars.each((inx, obj) => {
+        const $obj = $(obj);
+        $obj.hover(() => {
+            $obj.css('background', 'black')
+        }, () => {
+            $obj.css('background', "")
+        }).click(() => {
+            document.getElementById('findMe').scrollIntoView()
+        })
+    })
 }
 
 function shrinkElement() {
@@ -53,6 +63,7 @@ function shrinkElement() {
 function onExpandFinish() {
     const $iconBars = $('#iconBars');
     const $socialBars = $iconBars.children('div');
+    $socialBars.unbind('mouseenter mouseleave')
     const $templateContent = $iconBars.children('template');
     const $templateCloneContent = $templateContent.contents().clone();
 

@@ -114,6 +114,10 @@ body {
     background: linear-gradient(300deg, #363638 10%, #000000 100%);
 }
 
+/*#linkedin:hover, #discord:hover, #github:hover{*/
+/*    background: black*/
+/*}*/
+
 
 .condenseRight{
     animation: reveal 0.5s forwards;

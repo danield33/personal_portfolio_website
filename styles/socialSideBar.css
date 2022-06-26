@@ -19,13 +19,10 @@
 }
 
 /* Style the social media icons with color, if you want */
-.icon-bar a:hover {
+.icon-bar div:hover {
     background-color: #000;
 }
 
-.icon-bar a.jump{
-
-}
 
 .github {
     color: white;
@@ -47,7 +44,3 @@
     color: white;
 }
 
-.discord.side{
-    background: #6e9ad0;
-
-}
