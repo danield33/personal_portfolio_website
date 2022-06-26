@@ -67,9 +67,7 @@ body {
 
 
 #findMe {
-    /*background-color: #FFAD33;*/
     background-color: white;
-    /*min-height: 900px;*/
 }
 
 #portfolio {
@@ -82,7 +80,6 @@ body {
 
 #linkedin {
     background: linear-gradient(300deg, #0072b1 10%, #00569a 100%);
-    /*transition: all 2s ease-out;*/
 }
 
 #discord {
@@ -92,11 +89,6 @@ body {
 #github {
     background: linear-gradient(300deg, #363638 10%, #000000 100%);
 }
-
-/*#linkedin:hover, #discord:hover, #github:hover{*/
-/*    background: black*/
-/*}*/
-
 
 .condenseRight {
     animation: reveal 0.5s forwards;
