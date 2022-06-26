@@ -47,3 +47,16 @@
     padding-top: 150px;
     /*padding-bottom: 50px;*/
 }
+
+.spacer{
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover
+}
+
+.layer1{
+
+    background-image: url('../images/wave-transition.svg')
+}

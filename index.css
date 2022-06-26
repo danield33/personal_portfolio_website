@@ -66,14 +66,18 @@ body {
 }
 
 
-
 #findMe {
     /*background-color: #FFAD33;*/
     background-color: white;
+    min-height: 900px;
 }
 
-#portfolio{
+#portfolio {
     background-color: #069897
+}
+
+#dustie{
+    background-color: #3D2EC3
 }
 
 #linkedin {
@@ -85,7 +89,7 @@ body {
     background: linear-gradient(300deg, #6e9ad0 10%, #537EB2FF 100%);
 }
 
-#github{
+#github {
     background: linear-gradient(300deg, #363638 10%, #000000 100%);
 }
 
@@ -94,16 +98,24 @@ body {
 /*}*/
 
 
-.condenseRight{
+.condenseRight {
     animation: reveal 0.5s forwards;
 }
 
-@keyframes reveal{
-    from{
+@keyframes reveal {
+    from {
         clip-path: inset(0 100% 0 0);
     }
-    to{
+    to {
         clip-path: inset(0 0 0 0);
     }
+}
+
+.line {
+    width: 10%;
+    height: 3px;
+    background-color: silver;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
