@@ -112,7 +112,7 @@ function expandElement() {
         });
 
 }
-
-$('#iconBars').append($('#iconBars').children('template').contents().clone());
+const $iconBars = $('#iconBars');
+$iconBars.append($iconBars.children('template').contents().clone());
 listenForScroll();
 
