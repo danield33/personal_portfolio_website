@@ -1,0 +1,49 @@
+.curve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.curve svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 127px;
+}
+
+.curve .shape-fill {
+    fill: #F55C38;
+}
+
+.curve2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.curve2 svg {
+    position: relative;
+    display: block;
+    width: calc(132% + 1.3px);
+    height: 157px;
+}
+
+.curve2 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.curveSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    padding-top: 150px;
+    /*padding-bottom: 50px;*/
+}

@@ -63,7 +63,7 @@ function shrinkElement() {
 function onExpandFinish() {
     const $iconBars = $('#iconBars');
     const $socialBars = $iconBars.children('div');
-    $socialBars.unbind('mouseenter mouseleave')
+    $socialBars.unbind('mouseenter mouseleave click')
     const $templateContent = $iconBars.children('template');
     const $templateCloneContent = $templateContent.contents().clone();
 
