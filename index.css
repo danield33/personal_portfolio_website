@@ -74,7 +74,7 @@ body {
     background-color: #069897
 }
 
-#dustie{
+#dustie {
     background-color: #36393F;
 }
 
@@ -109,5 +109,10 @@ body {
     background-color: silver;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.link {
+    color: #4f2f9d;
+    font-weight: 500;
 }
 
