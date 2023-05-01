@@ -1,3 +1,6 @@
+/**
+ * Fades in an element when the user sees it
+ */
 function toggleFadeInOnScroll(){
 
     const observer = new IntersectionObserver((entries) => {
