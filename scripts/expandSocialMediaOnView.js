@@ -1,14 +1,15 @@
 function listenForScroll() {
 
+    const $findMe = $('#findMe');
     const observer = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
 
-
+            console.log($(window).scrollTop(), $findMe.offset().top)
             $('#iconBars').children('div').stop()
-            if (entry.isIntersecting && entry.time > 500) {
+            if (entry.isIntersecting && entry.time > 500 && $(window).scrollTop() < $findMe.offset().top) {
                 expandElement();
-            } else if (!entry.isIntersecting) {
+            } else if (!entry.isIntersecting && $(window).scrollTop() < $findMe.offset().top) {
                 shrinkElement();
             }
 
@@ -22,7 +23,7 @@ function listenForScroll() {
     });
 
 
-    $('#findMe').each((index, elem) => observer.observe(elem));
+    $findMe.each((index, elem) => observer.observe(elem));
 
 }
 

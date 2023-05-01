@@ -82,8 +82,8 @@ body {
     background: linear-gradient(300deg, #0072b1 10%, #00569a 100%);
 }
 
-#discord {
-    background: linear-gradient(300deg, #6e9ad0 10%, #537EB2FF 100%);
+#email {
+    background: linear-gradient(300deg, #eb5a4d 10%, #b44033 100%);
 }
 
 #github {
@@ -116,3 +116,23 @@ body {
     font-weight: 500;
 }
 
+.floaty-div:hover {
+    animation-name: floaty-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes floaty-animation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
