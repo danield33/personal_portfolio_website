@@ -22,7 +22,11 @@ function toggleFadeInOnScroll(){
 
     $('.fadeIn').each((index, elem) => {
         observer.observe(elem)
-    })
+    });
+
+    $('.fly-in').each((index, elem) => {
+        observer.observe(elem)
+    });
 
 }
 
