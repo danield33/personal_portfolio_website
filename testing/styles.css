@@ -35,3 +35,27 @@
     background-color: #eee;
     margin-top: 20px;
 }
+
+#trees {
+    transition: opacity 1s ease-in-out;
+}
+
+#svg-canvas {
+    width: 400px;
+    height: 400px;
+}
+
+#branches line,rect{
+    -webkit-transition-duration: 1s; /* Safari */
+    transition-duration: 1s;
+}
+#branchesDown line{
+    -webkit-transition-duration: 1s; /* Safari */
+    transition-duration: 1s;
+}
+
+
+
+/*line, rect {*/
+/*    opacity: 0;*/
+/*}*/

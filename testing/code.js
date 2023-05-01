@@ -1,38 +1,46 @@
-$(document).ready(function() {
-    var socialMediaBar = $('.social-media-bar');
-    var socialMediaButtons = socialMediaBar.find('a');
-    var expandSection = $('.expand');
-    var isExpanded = false;
+const transform = "matrix(1.00,0.00,0.00,10,0,0)",
+    transformTopRect = "matrix(1.00,0.00,0.00,10.00,0,0)",
+    transformLeftRect = "matrix(0.71,-0.71,7.07,7.07,0,0)",
+    transformRightRect = "matrix(0.71,0.71,-7.07,7.07,0,0)",
+    transformBotRect = "matrix(-0.00,-1.00,10.00,-0.00,0,0)",
+    transformBotLeftRect = "matrix(-0.71,-0.71,7.07,-7.07,0,0)",
+    transformBotRightRect = "matrix(0.71,-0.71,7.07,7.07,0,0)"
 
-    $('.expand-button').click(function() {
-        if (!isExpanded) {
-            socialMediaBar.animate({
-                'left': expandSection.offset().left + 'px',
-                'top': expandSection.offset().top - socialMediaBar.outerHeight() + 'px'
-            }, 500, function() {
-                socialMediaBar.css('position', 'relative');
-                socialMediaButtons.addClass('expanded').appendTo(expandSection);
-                $('html, body').animate({
-                    'height': expandSection.outerHeight() + socialMediaBar.outerHeight() + 20
-                }, 500);
+function* a() {
+    yield transformTopRect;
+    yield transformLeftRect;
+    yield transformRightRect;
+    yield transformBotRect;
+    yield transformBotRightRect;
+    yield transformBotLeftRect;
+}
+
+$(document).ready(function () {
+    $("#change").click(function () {
+        const branches = $("#branches"),
+            branchesDown = $("#branchesDown");
+        let transforms = a();
+
+        [...branches.find("line")].forEach(line => {
+            const anim = transforms.next().value;
+            console.log(anim);
+            $(line).css({
+                "transform": anim,
+                "-webkit-transform": anim,
+                "-ms-transform": anim
             });
-            isExpanded = true;
-        } else {
-            socialMediaButtons.removeClass('expanded');
-            socialMediaBar.animate({
-                'left': 'auto',
-                'right': '10px',
-                'top': '50%'
-            }, 500, function() {
-                socialMediaBar.css('position', 'fixed');
-                socialMediaButtons.appendTo(socialMediaBar);
-                $('html, body').animate({
-                    'height': $('html').css('height')
-                }, 500, function() {
-                    $('html, body').css('height', 'auto');
-                });
-            });
-            isExpanded = false;
-        }
+        });
+
+        //     .css({
+        //     "transform":transform,
+        //     "-webkit-transform":transforms.next().value,
+        //     "-ms-transform":transform
+        // });
+        // branches.find("rect").css({
+        //     "transform":transformRect,
+        //     "-webkit-transform":transformRect,
+        //     "-ms-transform":transformRect
+        // });
     });
+
 });
