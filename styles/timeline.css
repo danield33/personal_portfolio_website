@@ -1,13 +1,14 @@
 
-
 *, *:before, *:after {
     box-sizing: inherit;
 }
+
 .w3-container {
     margin: auto;
-    padding:0.01em 16px;
+    padding: 0.01em 16px;
     width: 60%;
 }
+
 .zigzag-timeline__item {
     /* Used to position the milestone HORIZONAL PART*/
     position: relative;
@@ -35,15 +36,20 @@ p, h3 {
     top: 50%;
 
     /* Circle it */
-    border-radius: 50%;
-    border: 1px solid #8080c2;
+    border-radius: 10%;
+    border: 1.5px solid silver;
     height: 1.6rem;
 
     /* Misc */
-    background: #aaaaff;
+    background: #835aac;
     text-align: center;
     padding: 10px;
+    color: white;
+    /*transition: all 0.2s; !* Animation *!*/
+    transform-origin: top;
+
 }
+
 
 /* Styles for even items */
 .zigzag-timeline__item:nth-child(2n) {
@@ -52,7 +58,7 @@ p, h3 {
 
 }
 
-.zigzag-timeline__item:nth-child(2n) .zigzag-timeline__milestone{
+.zigzag-timeline__item:nth-child(2n) .zigzag-timeline__milestone {
     left: 0;
     transform: translate(-50%, -50%);
 }
@@ -67,7 +73,7 @@ p, h3 {
     transform: translate(50%, -50%);
 }
 
-.fly-in{
+.fly-in {
     position: relative;
 }
 
@@ -77,16 +83,16 @@ p, h3 {
     /* adjust the animation duration and timing function as needed */
 }
 
-.fly-in.right{
+.fly-in.right {
     visibility: hidden;
 }
 
-.fly-in.left.start{
+.fly-in.left.start {
     animation: fly-in-left 0.5s ease-out forwards;
-    padding-left: 48px
+    padding-left: 64px
 }
 
-.fly-in{
+.fly-in {
     visibility: hidden;
 }
 

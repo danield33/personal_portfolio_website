@@ -15,8 +15,6 @@ $(document).ready(function() {
         const scrollBottom = scrollTop + windowHeight;
         const timelineProgress = (scrollBottom - timelineTop) / timelineHeight;
 
-        console.log(timelineProgress);
-
     });
 })
 
