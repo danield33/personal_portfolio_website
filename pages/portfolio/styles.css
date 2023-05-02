@@ -1,3 +1,14 @@
 #portfolio-introduction{
     background-color: floralwhite;
 }
+
+.dustie-image{
+    width: 25%
+}
+.icon {
+    color: white;
+}
+
+a > i.fa-brands{
+    color: rgba(196,194,194,0.55)
+}

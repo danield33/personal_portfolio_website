@@ -8,6 +8,9 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" rel="stylesheet">
     <link href="../../index.css" rel="stylesheet" type="text/css"/>
     <link href="./styles.css" rel="stylesheet" type="text/css"/>
+    <link href="../../styles/curveStyles.css" rel="stylesheet" type="text/css"/>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/9b4ef36c87.js"></script>
+
 
 </head>
 <body>
@@ -46,7 +49,7 @@
         </p>
     </div>
 
-<!--    Point down arrow-->
+    <!--    Point down arrow-->
     <div class="d-flex align-items-center justify-content-center">
 
         <a class="scrollIndicator my-3" href="#portfolio-introduction">
@@ -61,7 +64,8 @@
 
 </section>
 
-<section id="portfolio-introduction" class="d-flex justify-content-center align-items-center flex-column container-fluid py-5">
+<section id="portfolio-introduction"
+         class="d-flex justify-content-center align-items-center flex-column container-fluid py-5">
 
     <h1 class="fadeIn">Hey! Check out a few things I've made</h1>
 
@@ -69,16 +73,55 @@
 
     <h3 class="mt-4 fadeIn" style="--fade-duration: 2s">My Portfolio</h3>
 
-<h1></h1>
+</section>
+
+<section id="dustie">
+    <div class="spacer dustie-layer"></div>
+
+    <div class="container text-white py-3 px-5 d-flex justify-content-around align-items-center">
+
+        <img class="img-fluid dustie-image fadeIn pb-5" src="../../images/Dustie.png" alt="Dustie Logo"/>
+
+        <div class="d-flex flex-column col-4">
+            <div class="d-flex flex-row align-items-center">
+                <p class="h1 text-start align-self-start fadeIn p-1">Dustie</p>
+                <a href="https://discord.com/developers/docs/intro" title="Discord API">
+                    <i class="fa-brands fa-discord mx-2"></i>
+                </a>
+                <a href="https://nodejs.org/en" title="Node.JS">
+                    <i class="fa-brands fa-node-js"></i>
+                </a>
+            </div>
+            <p class="text-start fadeIn" style="--fade-duration: 2s">
+                A Multi-Purpose Discord bot with many options for moderation, entertainment, music, economy, and more.
+                <br>
+                A high level of customization through a custom dashboard
+            </p>
+            <div class="d-flex flex-sm-column flex-md-row justify-content-around">
+                <a class="btn btn-outline-light btn-lg d-flex justify-content-center align-items-center align-content-between"
+                   href="https://github.com/danield33/DustieBot" target="_blank">
+                <span class="d-none d-md-block mx-2">
+                    Check it on Github
+                </span>
+                    <i class="fa-brands fa-github text-white"></i>
+                </a>
+                <button class="btn btn-light">
+                    Learn More
+                </button>
+            </div>
+        </div>
+
+    </div>
 
 </section>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="../../scripts/animateOnView.js"></script>
+<script src="../../index.js"></script>
 
 </body>
-
 
 
 </html>
