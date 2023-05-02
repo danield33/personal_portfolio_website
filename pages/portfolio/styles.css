@@ -19,11 +19,13 @@ a > i.fa-brands{
 
 .layered-image{
     transform: matrix(0.70,0.12,-0.41,0.29,0,0);
-    height: 50%;
-    /*z-index: -1;*/
     position: relative;
     background-image: url("../../images/Dustie-Example-1.png")
 
+}
+
+.discord-bgcolor{
+    background-color:  #36393F;
 }
 
 @media (max-width: 768px){
@@ -35,26 +37,33 @@ a > i.fa-brands{
 }
 
 .layered-image.slide-right{
-    animation: right-slide 2s ease-out infinite;
+    animation: right-slide 5s ease-out infinite;
     animation-direction: alternate;
-    /*transform: matrix(1.04,0.34,-0.91,0.42,0,0)*/
+    background: red
 }
 
 @keyframes right-slide {
-    0%, 10%{
+    0%, 5%{
         /*transform: translate(0%, 0%) matrix(1.04,0.34,-0.91,0.42,0,0) scale(0.75);*/
         bottom: 100px;
-        right: 150px;
+        right: 0;
     }
-    90%, 100%{
+    95%, 100%{
         bottom: 1100px;
-        right: -800px;
+        right: -100%;
         /*transform: translate(200%, -1000px) matrix(1.04,0.34,-0.91,0.42,0,0) scale(0.75);*/
     }
 }
 
-@media(prefers-reduced-motion: reduce){
-    .layered-image.slide-right{
-        animation: none
-    }
+/*@media(prefers-reduced-motion: reduce){*/
+/*    .layered-image.slide-right{*/
+/*        animation: none*/
+/*    }*/
+/*}*/
+
+.dustie-content{
+    z-index: 2;
+}
+.dustie-content p{
+    text-shadow: 2px 2px black;
 }

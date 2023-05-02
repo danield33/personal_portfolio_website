@@ -56,6 +56,10 @@
     background-size: cover
 }
 
+.spacer.dustie-layer{
+    aspect-ratio: 960/96;
+}
+
 .dustie-layer{
     background-image: url('../images/waves/white-to-discord.svg')
 }
