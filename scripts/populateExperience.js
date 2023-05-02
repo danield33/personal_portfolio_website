@@ -22,8 +22,8 @@ const experienceItems = [
     {
         name: 'The Edge',
         description: 'A react native mobile app to help coaches manage their teams better',
-
-    }
+        image: 'images/TheEdge.png'
+    },
 
 ]
 
@@ -50,27 +50,6 @@ function populateExperience() {
         $timeline.append(clonedItem)
     }
 
-    // const $templateCloneContent = $templateContent.contents().clone();
-    // const $socialBars = $iconBars.children('div');
-    // $iconBars.removeClass('icon-bar').addClass('container');
-    // const boundingClientRect = $iconBars[0].getBoundingClientRect();
-    //
-    // $socialBars.attr('class', $templateCloneContent[1].className);
-    //
-    // let once = 0;
-    // $socialBars.addClass('position-absolute')
-    //     .css('width', '0%')
-    //     .animate({
-    //         top: `${$(window).height() - boundingClientRect.y + 500}px`,
-    //         left: `${boundingClientRect.x}px`,
-    //         height: '100%',
-    //         width: '80%'
-    //     }, 500, 'swing', () => {
-    //         if (once === 0) {
-    //             onExpandFinish()
-    //         }
-    //         once++;
-    //     });
 
 }
 // const $iconBars = ;
