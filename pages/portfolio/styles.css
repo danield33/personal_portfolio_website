@@ -1,5 +1,9 @@
+
 #portfolio-introduction{
     background-color: floralwhite;
+    z-index: 2;
+    position: relative;
+    min-height: 400px
 }
 
 .dustie-image{
@@ -11,4 +15,46 @@
 
 a > i.fa-brands{
     color: rgba(196,194,194,0.55)
+}
+
+.layered-image{
+    transform: matrix(0.70,0.12,-0.41,0.29,0,0);
+    height: 50%;
+    /*z-index: -1;*/
+    position: relative;
+    background-image: url("../../images/Dustie-Example-1.png")
+
+}
+
+@media (max-width: 768px){
+    .layered-image{
+        max-width: 20%;
+        height: auto;
+        transform: matrix(1.04,0.34,-0.91,0.42,0,0);
+    }
+}
+
+.layered-image.slide-right{
+    animation: right-slide 2s ease-out infinite;
+    animation-direction: alternate;
+    /*transform: matrix(1.04,0.34,-0.91,0.42,0,0)*/
+}
+
+@keyframes right-slide {
+    0%, 10%{
+        /*transform: translate(0%, 0%) matrix(1.04,0.34,-0.91,0.42,0,0) scale(0.75);*/
+        bottom: 100px;
+        right: 150px;
+    }
+    90%, 100%{
+        bottom: 1100px;
+        right: -800px;
+        /*transform: translate(200%, -1000px) matrix(1.04,0.34,-0.91,0.42,0,0) scale(0.75);*/
+    }
+}
+
+@media(prefers-reduced-motion: reduce){
+    .layered-image.slide-right{
+        animation: none
+    }
 }

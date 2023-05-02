@@ -65,7 +65,8 @@
 </section>
 
 <section id="portfolio-introduction"
-         class="d-flex justify-content-center align-items-center flex-column container-fluid py-5">
+         class="d-flex justify-content-center align-items-center flex-column container-fluid py-5"
+>
 
     <h1 class="fadeIn">Hey! Check out a few things I've made</h1>
 
@@ -75,45 +76,59 @@
 
 </section>
 
-<section id="dustie">
-    <div class="spacer dustie-layer"></div>
+<section id="dustie" class="overflow-hidden">
+    <div class="spacer dustie-layer" style="z-index: 5; position: relative"></div>
 
-    <div class="container text-white py-3 px-5 d-flex justify-content-around align-items-center">
+    <div class="container-fluid position-absolute" style="z-index: 0">
+        <img src="../../images/Dustie-Example-1.png" class="shadow layered-image slide-right"/>
+    </div>
 
-        <img class="img-fluid dustie-image fadeIn pb-5" src="../../images/Dustie.png" alt="Dustie Logo"/>
+    <div class="container text-white py-5 px-5">
 
-        <div class="d-flex flex-column col-4">
-            <div class="d-flex flex-row align-items-center">
-                <p class="h1 text-start align-self-start fadeIn p-1">Dustie</p>
-                <a href="https://discord.com/developers/docs/intro" title="Discord API">
-                    <i class="fa-brands fa-discord mx-2"></i>
-                </a>
-                <a href="https://nodejs.org/en" title="Node.JS">
-                    <i class="fa-brands fa-node-js"></i>
-                </a>
-            </div>
-            <p class="text-start fadeIn" style="--fade-duration: 2s">
-                A Multi-Purpose Discord bot with many options for moderation, entertainment, music, economy, and more.
-                <br>
-                A high level of customization through a custom dashboard
-            </p>
-            <div class="d-flex flex-sm-column flex-md-row justify-content-around">
-                <a class="btn btn-outline-light btn-lg d-flex justify-content-center align-items-center align-content-between"
-                   href="https://github.com/danield33/DustieBot" target="_blank">
+        <div class="d-flex justify-content-around align-items-center">
+            <img class="img-fluid dustie-image fadeIn pb-5" src="../../images/Dustie.png" alt="Dustie Logo"/>
+
+            <div class="d-flex flex-column col-4" style="z-index: 2">
+                <div class="d-flex flex-row align-items-center">
+
+                    <p class="h1 text-start align-self-start fadeIn p-1" >Dustie</p>
+                    <a href="https://discord.com/developers/docs/intro" title="Discord API">
+                        <i class="fa-brands fa-discord mx-2"></i>
+                    </a>
+                    <a href="https://nodejs.org/en" title="Node.JS">
+                        <i class="fa-brands fa-node-js"></i>
+                    </a>
+
+                </div>
+                <p class="text-start fadeIn" style="--fade-duration: 2s">
+                    A Multi-Purpose Discord bot with many options for moderation, entertainment, music, economy, and more.
+                    <br>
+                    A high level of customization through a custom dashboard made with Angular
+                </p>
+                <div class="d-flex flex-sm-column flex-md-row justify-content-around">
+                    <a class="btn btn-outline-light btn-lg d-flex justify-content-center align-items-center align-content-between"
+                       href="https://github.com/danield33/DustieBot" target="_blank">
                 <span class="d-none d-md-block mx-2">
                     Check it on Github
                 </span>
-                    <i class="fa-brands fa-github text-white"></i>
-                </a>
-                <button class="btn btn-light">
-                    Learn More
-                </button>
+                        <i class="fa-brands fa-github text-white"></i>
+                    </a>
+                    <button class="btn btn-light">
+                        Learn More
+                    </button>
+                </div>
             </div>
         </div>
 
+
+<!--        <div class="position-absolute" style="background: red">-->
+
+
+<!--        </div>-->
     </div>
 
 </section>
+<!--End Dustie Section-->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
