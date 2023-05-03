@@ -80,7 +80,7 @@
 
     <div class="spacer dustie-layer" style="z-index: 5; position: relative"></div>
 
-    
+
     <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
          style="--slide-duration: 60s;"
     >
@@ -97,9 +97,9 @@
     </div>
 
     <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
-         style="--slide-duration: 32s;
-          --start-top-offset: 130%; --start-left-offset: 30%;
-          --end-top-offset: -20%; --end-left-offset: -50%;
+         style="--slide-duration: 33s;
+          --start-top-offset: -300px; --start-left-offset: -1700px;
+          --end-top-offset: 400px; --end-left-offset: -400px;
           --anim-direction: alternate-reverse;
 "
     >
@@ -144,7 +144,7 @@
                 </span>
                         <i class="fa-brands fa-github text-white"></i>
                     </a>
-                    <button class="btn btn-light">
+                    <button class="btn btn-light" onclick="clearImages('dustie')">
                         Learn More
                     </button>
                 </div>
@@ -162,6 +162,8 @@
 
 <script src="../../scripts/animateOnView.js"></script>
 <script src="../../index.js"></script>
+<script src="./clear-sliding-images.js"></script>
+
 
 </body>
 
