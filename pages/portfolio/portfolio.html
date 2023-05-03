@@ -76,22 +76,46 @@
 
 </section>
 
-<section id="dustie" class="overflow-hidden">
+<section id="dustie" class="overflow-hidden" style="height: 1000px">
+
     <div class="spacer dustie-layer" style="z-index: 5; position: relative"></div>
 
-    <div class="container-fluid position-absolute discord-bgcolor overflow-hidden" >
-        <img src="../../images/Dustie-Example-1.png" class="shadow layered-image slide-right"/>
+    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 5s;"
+    >
+
+        <div class="d-flex flex-column position-relative">
+            <div class="separator-box" style="--height: 500px"></div>
+            <img src="../../images/Dustie-Example-2.png" style=""/>
+            <div class="separator-box"></div>
+            <img src="../../images/Dustie-Example-1.png" style=""/>
+            <div class="separator-box"></div>
+
+        </div>
+
     </div>
 
-    <div class="container text-white py-5 px-5">
+    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 10s; --start-top-offset: 50%; --end-top-offset: 50%"
+    >
 
+        <div class="d-flex flex-column position-relative">
+            <div class="separator-box" style="--height: 500px"></div>
+            <img src="../../images/Dustie-Example-3.png" style=""/>
+            <div class="separator-box" style="--height: 500px"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container text-white py-5 px-5 position-relative" style="z-index: 2">
         <div class="d-flex justify-content-around align-items-center">
-            <img class="img-fluid dustie-image fadeIn pb-5" src="../../images/Dustie.png" alt="Dustie Logo"/>
 
             <div class="d-flex flex-column col-4 dustie-content" style="">
                 <div class="d-flex flex-row align-items-center">
 
-                    <p class="h1 text-start align-self-start fadeIn p-1" >Dustie</p>
+                    <p class="h1 text-start align-self-start fadeIn p-1">Dustie</p>
                     <a href="https://discord.com/developers/docs/intro" title="Discord API">
                         <i class="fa-brands fa-discord mx-2"></i>
                     </a>
@@ -100,8 +124,10 @@
                     </a>
 
                 </div>
+
                 <p class="text-start fadeIn">
-                    A Multi-Purpose Discord bot with many options for moderation, entertainment, music, economy, and more.
+                    A Multi-Purpose Discord bot with many options for moderation, entertainment, music, economy, and
+                    more.
                     <br>
                     A high level of customization through a custom dashboard made with Angular
                 </p>
@@ -121,10 +147,10 @@
         </div>
 
 
-<!--        <div class="position-absolute" style="background: red">-->
+        <!--        <div class="position-absolute" style="background: red">-->
 
 
-<!--        </div>-->
+        <!--        </div>-->
     </div>
 
 </section>

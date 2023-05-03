@@ -1,57 +1,65 @@
 
-#portfolio-introduction{
+:root{
+    --slide-duration: 60s;
+    --start-top-offset: 0px;
+    --end-top-offset: 0px;
+    --height: 1000px;
+}
+
+#portfolio-introduction {
     background-color: floralwhite;
     z-index: 2;
     position: relative;
     min-height: 400px
 }
 
-.dustie-image{
+.dustie-image {
     width: 25%
 }
+
 .icon {
     color: white;
 }
 
-a > i.fa-brands{
-    color: rgba(196,194,194,0.55)
+a > i.fa-brands {
+    color: rgba(196, 194, 194, 0.55)
 }
 
-.layered-image{
-    transform: matrix(0.70,0.12,-0.41,0.29,0,0);
+.layered-image {
+    transform: matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
     position: relative;
-    background-image: url("../../images/Dustie-Example-1.png")
-
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-.discord-bgcolor{
-    background-color:  #36393F;
+.discord-bgcolor {
+    background-color: #36393F;
 }
 
-@media (max-width: 768px){
-    .layered-image{
+@media (max-width: 768px) {
+    .layered-image {
         max-width: 20%;
         height: auto;
-        transform: matrix(1.04,0.34,-0.91,0.42,0,0);
+        transform: matrix(0.53, -0.09, 0.26, 0.43, 0, 0);
     }
 }
 
-.layered-image.slide-right{
-    animation: right-slide 5s ease-out infinite;
+.layered-image.slide-right {
+    animation: right-slide var(--slide-duration) ease-out infinite;
     animation-direction: alternate;
-    background: red
 }
 
 @keyframes right-slide {
-    0%, 5%{
-        /*transform: translate(0%, 0%) matrix(1.04,0.34,-0.91,0.42,0,0) scale(0.75);*/
-        bottom: 100px;
-        right: 0;
+    0%, 2% {
+        top: calc(-200% + var(--start-top-offset));
+        left: -200%;
     }
-    95%, 100%{
-        bottom: 1100px;
-        right: -100%;
-        /*transform: translate(200%, -1000px) matrix(1.04,0.34,-0.91,0.42,0,0) scale(0.75);*/
+    98%, 100% {
+        top: calc(50% + var(--end-top-offset));
+        left: 50%;
     }
 }
 
@@ -61,9 +69,18 @@ a > i.fa-brands{
 /*    }*/
 /*}*/
 
-.dustie-content{
+.dustie-content {
     z-index: 2;
 }
-.dustie-content p{
+
+.dustie-content p {
     text-shadow: 2px 2px black;
+}
+
+.separator-box {
+    background-color: #2a2c30;
+    width: 100%;
+    height: var(--height);
+    margin-top: 300px;
+    margin-bottom: 300px;
 }
