@@ -3,20 +3,21 @@ function clearImages(sectionID) {
     const section = $(`#${sectionID}`);
     console.log(section)
 
-    const $image = $('#image-1');
+    const element = document.getElementById("parent-test-box");
+    const box = $(`#test-box`);
+    const translate = getTranslate(element);
 
-    const imageHeight = $image.height();
-    const imageWidth = $image.width();
-
-    const height = ($(window).height() - imageHeight) / 2;
-    const width = ($(window).width() - imageWidth) / 2;
-    $image.addClass('position-fixed')
-    $image.removeClass("separator-box")
-        .addClass("flip-card")
-        .css({
-            top: height + 'px',
-            left: width + 'px'
-        })
-
+    box.css({
+        transform: `matrix(3.13, 0.736, -3.86, 4.97, 0, 0) translate(${-translate.x}px, ${-translate.y}px) scale(0.5)`,
+        position: 'fixed'
+    })
 
 }
+
+function getTranslate(myElement) {
+    var style = window.getComputedStyle(myElement);
+    var matrix = new WebKitCSSMatrix(style.transform);
+    return {x: matrix.m41, y: matrix.m42}
+}
+
+// document.querySelector('button').addEventListener('click', getTranslateX);
