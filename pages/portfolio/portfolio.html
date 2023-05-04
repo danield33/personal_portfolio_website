@@ -81,25 +81,31 @@
     <div class="spacer dustie-layer" style="z-index: 5; position: relative"></div>
 
 
-    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
-         style="--slide-duration: 60s;"
+    <div id="layer1" class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 5s;"
     >
 
-        <div class="d-flex flex-column position-relative">
-            <div class="separator-box" style="--height: 500px"></div>
+        <div id="flip-test-parent" class="d-flex flex-column position-relative">
+            <div class="separator-box-1" style="--height: 500px"></div>
             <img src="../../images/Dustie-Example-2.png" style=""/>
-            <div class="separator-box"></div>
+            <div class="separator-box-1"></div>
             <img src="../../images/Dustie-Example-1.png" style=""/>
-            <div class="separator-box"></div>
 
         </div>
+
+
+    </div>
+
+    <div id="flip-test" class="flip-card position-absolute layered-image">
+
+            <div class="separator-box"></div>
 
     </div>
 
     <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
-         style="--slide-duration: 33s;
+         style="--slide-duration: 10s;
           --start-top-offset: -300px; --start-left-offset: -1700px;
-          --end-top-offset: 400px; --end-left-offset: -400px;
+          --end-top-offset: 400px; --end-left-offset: -430px;
           --anim-direction: alternate-reverse;
 "
     >
