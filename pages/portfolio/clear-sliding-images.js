@@ -15,11 +15,17 @@ function showModal(sectionID) {
     box.css({
         'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0) translate(${distanceX}px, ${distanceY}px) rotateY(180deg)  scale(${scale})`,
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
-        console.log(23)
+
+
     })
     $(element[0]).css({
         'z-index': 2 //moves it above text content
     })
+
+    setTimeout(() => {
+
+    }, 1000);
+
 }
 
 function getTranslationToCenterOfScreen(smallerElement) {
