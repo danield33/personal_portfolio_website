@@ -27,9 +27,7 @@ function showModal(sectionID) {
     if(visibleBox.length === 0){
         box = $(allBoxes[0]);
     }else box = $(visibleBox[0]);
-
-    console.log(visibleBox)
-
+    
     $(element[0]).addClass("freeze");
     box.addClass('expand');
 
