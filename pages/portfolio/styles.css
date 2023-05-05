@@ -30,7 +30,6 @@ a > i.fa-brands {
 
 .layered-image {
     transform: matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -42,11 +41,13 @@ a > i.fa-brands {
     background-color: #36393F;
 }
 
-
-
 .layered-image.slide-right {
     animation: right-slide var(--slide-duration) ease-in-out infinite;
     animation-direction: var(--anim-direction)
+}
+
+.layered-image.slide-right.freeze{
+    animation-play-state: paused
 }
 
 
@@ -74,4 +75,6 @@ a > i.fa-brands {
     height: var(--height);
     margin-top: 300px;
     margin-bottom: 300px;
+    transition: all ease 3s;
+    transform-style: preserve-3d;
 }

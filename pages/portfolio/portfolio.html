@@ -90,9 +90,9 @@
             <img src="../../images/Dustie-Example-2.png" style=""/>
             <div class="separator-box"></div>
             <img src="../../images/Dustie-Example-1.png" style=""/>
+            <div id="test-box" class="separator-box" style="--height: 500px;">hi</div>
 
         </div>
-        <div id="test-box" class="separator-box" style="--height: 200px">hi</div>
 
     </div>
 
@@ -114,17 +114,17 @@
     </div>
 
 
-    <div class="container text-white py-5 px-5 position-relative" style="z-index: 2">
+    <div class="container text-white py-5 px-5 position-relative" style="z-index: 1">
         <div class="d-flex justify-content-around align-items-center">
 
             <div class="d-flex flex-column col-4 dustie-content" style="">
                 <div class="d-flex flex-row align-items-center">
 
                     <p class="h1 text-start align-self-start fadeIn p-1">Dustie</p>
-                    <a href="https://discord.com/developers/docs/intro" title="Discord API">
+                    <a href="https://discord.com/developers/docs/intro" title="Discord API" target="_blank">
                         <i class="fa-brands fa-discord mx-2"></i>
                     </a>
-                    <a href="https://nodejs.org/en" title="Node.JS">
+                    <a href="https://nodejs.org/en" title="Node.JS" target="_blank">
                         <i class="fa-brands fa-node-js"></i>
                     </a>
 
@@ -144,7 +144,7 @@
                 </span>
                         <i class="fa-brands fa-github text-white"></i>
                     </a>
-                    <button class="btn btn-light" onclick="clearImages('dustie')">
+                    <button class="btn btn-light" onclick="showModal('dustie')">
                         Learn More
                     </button>
                 </div>
