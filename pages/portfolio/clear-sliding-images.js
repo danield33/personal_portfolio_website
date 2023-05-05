@@ -24,7 +24,7 @@ function showModal(sectionID) {
     });
 
     let box;
-    if(visibleBox.length == 0){
+    if(visibleBox.length === 0){
         box = $(allBoxes[0]);
     }else box = $(visibleBox[0]);
 
@@ -37,6 +37,9 @@ function showModal(sectionID) {
     const [distanceX, distanceY] = getTranslationToCenterOfScreen(box[0]);
     const scale = getScaleFactor(section, box);
 
+    box.parent().parent().css({//make parent z index bigger incase it chooses bottom layer's separator box
+        'z-index': 2,
+    })
     box.css({
         'z-index': 2,
         'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0) translate(${distanceX}px, ${distanceY}px) rotateY(180deg)  scale(${scale})`,
