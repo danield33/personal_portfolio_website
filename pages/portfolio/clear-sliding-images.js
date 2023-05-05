@@ -3,7 +3,32 @@ function showModal(sectionID) {
     const section = $(`#${sectionID}`);
 
     const element = $(".layered-image");
-    const box = $(`#test-box`);
+    const allBoxes = $(`.separator-box`);
+
+    console.log(allBoxes);
+    const windowHeight = $(window).height();
+    const windowWidth = $(window).width();
+    const visibleBox = allBoxes.filter(function() {
+        const rect = this.getBoundingClientRect();
+        const visibleHeight = windowHeight - rect.top;
+        const visibleWidth = windowWidth - rect.left;
+
+        return (
+            visibleHeight > 0 &&
+            visibleWidth > 0 &&
+            rect.bottom >= 0 &&
+            rect.right >= 0 &&
+            rect.top <= windowHeight &&
+            rect.left <= windowWidth
+        );
+    });
+
+    let box;
+    if(visibleBox.length == 0){
+        box = $(allBoxes[0]);
+    }else box = $(visibleBox[0]);
+
+    console.log(visibleBox)
 
     $(element[0]).addClass("freeze");
     box.addClass('expand');
@@ -13,9 +38,14 @@ function showModal(sectionID) {
     const scale = getScaleFactor(section, box);
 
     box.css({
+        'z-index': 2,
         'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0) translate(${distanceX}px, ${distanceY}px) rotateY(180deg)  scale(${scale})`,
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
 
+        /*
+        to rest:
+        box.css({transform: 'none'})
+         */
 
     })
     $(element[0]).css({
@@ -23,6 +53,8 @@ function showModal(sectionID) {
     })
 
     setTimeout(() => {
+
+
 
     }, 1000);
 
