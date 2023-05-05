@@ -40,4 +40,3 @@ function showModal(sectionID) {
         'z-index': 2 //moves it above text content
     })
 }
-).addEventListener('click', getTranslateX);
