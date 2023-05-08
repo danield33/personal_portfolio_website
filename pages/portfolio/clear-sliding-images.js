@@ -15,7 +15,6 @@ function showModal(sectionID) {
     const [scaleX, scaleY] = getScaleFactor(section, box);
     box.append(template.html());
 
-    // console.log(scaleX, scaleY);
     box.parent().parent().css({//make parent z index bigger incase it chooses bottom layer's separator box
         'z-index': 2,
     })
@@ -23,8 +22,6 @@ function showModal(sectionID) {
         'z-index': 2,
         'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0)
          translate(${distanceX}px, ${distanceY + sectionSplitter.height()}px) rotateY(180deg) scaleY(${200}%)`,
-        // width: section.width(),
-        // height: section.height()
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
         /*
         to rest:
