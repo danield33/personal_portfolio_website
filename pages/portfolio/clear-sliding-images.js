@@ -1,11 +1,66 @@
-
-// showModal('dustie')
-
 const expandedBoxes = {}
 
-function hideModal(sectionID){
+function resetCss(sectionID){
     const section = $(`#${sectionID}`);
+    const box = expandedBoxes[sectionID];
+    const sectionSplitter = section.find('.spacer');
+    const modal = sectionSplitter.next();
 
+
+    box.show().css({//remove transformations
+        transform: 'none',
+        'z-index': 0
+    })
+
+
+    section.css({//make background default color
+        background: '#36393F'
+    });
+    modal.remove();
+}
+
+function hideModal(sectionID) {
+
+    const section = $(`#${sectionID}`);
+    const box = expandedBoxes[sectionID];
+    const sectionSplitter = section.find('.spacer');
+    const modal = sectionSplitter.next();
+
+
+    box.show().css({//remove transformations
+        transform: 'none',
+        'z-index': 0
+    })
+
+
+    section.css({//make background default color
+        background: '#36393F'
+    });
+    modal.css('visibility', 'hidden');
+
+    box.parent().parent().css({//reset z-index
+        'z-index': '',
+    }).removeClass('freeze')
+    .one('transitionend webkitTransitionEnd oTransitionEnd', () => {
+        box.find('div').remove();
+
+        box.show().css({//remove transformations
+            transform: 'none',
+            'z-index': 0
+        }).parent().parent().css({
+            'z-index': 0
+        })
+
+        section.css({//make background default color
+            background: '#36393F'
+        });
+        sectionSplitter.next().remove();
+
+    });
+
+
+
+    delete expandedBoxes[sectionID];
 
 }
 
@@ -18,42 +73,38 @@ function showModal(sectionID) {
 
     const box = getVisibleBox();
 
-    if(!expandedBoxes[sectionID])
+    const layeredImage = box.parent().parent();
+
+    if (!expandedBoxes[sectionID])
         expandedBoxes[sectionID] = box;
     else return;
 
-    element.addClass("freeze");
-    box.addClass('expand');
+    layeredImage.addClass("freeze").css({//make parent z index bigger incase it chooses bottom layer's separator box
+        'z-index': 2,
+    })
+
     const template = section.find('template')
 
     const [distanceX, distanceY] = getTranslationToCenterOfBigElement(box, section);
     const [scaleX, scaleY] = getScaleFactor(section, box);
     box.append(template.html());
 
-    box.parent().parent().css({//make parent z index bigger incase it chooses bottom layer's separator box
-        'z-index': 2,
-    })
+
     box.css({
         'z-index': 2,
         'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0)
          translate(${distanceX}px, ${distanceY + sectionSplitter.height()}px) rotateY(180deg) scaleY(${200}%)`,
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
-        /*
-        to rest:
-        box.css({transform: 'none'})
-         */
 
         const element = $(template.clone().html()).insertAfter(sectionSplitter);
 
         element.removeClass('flipped')
-
-        element.css({
-            position: 'relative',
-            'z-index': 10,
-            'background': '#2a2c30',
-            'width': '100%',
-            // height: '100%'
-        });
+            .css({
+                position: 'relative',
+                'z-index': 10,
+                'background': '#2a2c30',
+                'width': '100%',
+            });
         section.css({
             'background': '#2a2c30'
         });
@@ -96,12 +147,12 @@ function getScaleFactor($biggerElement, $smallerElement) {
     return [scaleX, scaleY];
 }
 
-function getVisibleBox(){
+function getVisibleBox() {
     const allBoxes = $(`.separator-box`);
 
     const windowHeight = $(window).height();
     const windowWidth = $(window).width();
-    const visibleBox = allBoxes.filter(function() {
+    const visibleBox = allBoxes.filter(function () {
         const rect = this.getBoundingClientRect();
         const visibleHeight = windowHeight - rect.top;
         const visibleWidth = windowWidth - rect.left;
@@ -117,8 +168,8 @@ function getVisibleBox(){
     });
 
     let box;
-    if(visibleBox.length === 0){
+    if (visibleBox.length === 0) {
         box = $(allBoxes[0]);
-    }else box = $(visibleBox[0]);
+    } else box = $(visibleBox[0]);
     return box;
 }
