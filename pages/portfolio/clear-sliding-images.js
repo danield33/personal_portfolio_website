@@ -1,3 +1,5 @@
+
+// showModal('dustie')
 function showModal(sectionID) {
 
     const section = $(`#${sectionID}`);
@@ -41,7 +43,8 @@ function showModal(sectionID) {
         });
         section.css({
             'background': '#2a2c30'
-        })
+        });
+        box.hide()
         console.log('done')
 
     })

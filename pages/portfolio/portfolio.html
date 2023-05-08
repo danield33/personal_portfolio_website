@@ -10,7 +10,7 @@
     <link href="./styles.css" rel="stylesheet" type="text/css"/>
     <link href="../../styles/curveStyles.css" rel="stylesheet" type="text/css"/>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/9b4ef36c87.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css" integrity="sha512-Cdvnk1SFWqcb3An6gMyqDRH40Js8qmsWcSK10I2gSifCe2LilaPMsHd6DldEvQ3uIlCb1qdRUrNeAFFleOu4xQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
@@ -81,16 +81,19 @@
     <div class="spacer dustie-layer" style="z-index: 5; position: relative"></div>
 
 
-
     <template id="dustie-more">
-        <div class="flipped align-items-center justify-content-center d-flex align-content-center flex-column"
+
+        <div class="flipped align-items-center  d-flex align-content-center flex-column container-fluid"
              style="height: 100%">
-            <p style="color: white">Hello World</p>
-            <p style="color: white">Hello World</p>
+<!--            <img src="../../images/DustieBackground.png" style="aspect-ratio: 1433/250; width: 100%"/>-->
 
-            <p style="color: white">Hello World</p>
+            <div class="container d-flex flex-row justify-content-around align-items-center">
+                <p class="text-white fw-semibold" style="font-size: 75px;">
+                    Dustie
+                </p>
+                <img src="../../images/Dustie.png" width="200"/>
+            </div>
 
-            <p style="color: white">Hello World</p>
         </div>
 
     </template>
@@ -132,6 +135,7 @@
     </div>
 
 
+
     <div class="container text-white py-5 px-5 position-relative" style="z-index: 1">
         <div class="d-flex justify-content-around align-items-center">
 
@@ -140,10 +144,14 @@
 
                     <p class="h1 text-start align-self-start fadeIn p-1">Dustie</p>
                     <a href="https://discord.com/developers/docs/intro" title="Discord API" target="_blank">
-                        <i class="fa-brands fa-discord mx-2"></i>
+                        <i class="fa-brands fa-discord mx-1"></i>
                     </a>
                     <a href="https://nodejs.org/en" title="Node.JS" target="_blank">
-                        <i class="fa-brands fa-node-js"></i>
+                        <i class="fa-brands fa-node-js m-1"></i>
+                    </a>
+
+                    <a href="https://www.mongodb.com" title="Mongo DB" target="_blank">
+                        <i class="icon-mongodb m-1" style="color: #87888a"></i>
                     </a>
 
                 </div>
