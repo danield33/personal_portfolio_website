@@ -1,5 +1,14 @@
 
 // showModal('dustie')
+
+const expandedBoxes = {}
+
+function hideModal(sectionID){
+    const section = $(`#${sectionID}`);
+
+
+}
+
 function showModal(sectionID) {
 
     const section = $(`#${sectionID}`);
@@ -8,7 +17,11 @@ function showModal(sectionID) {
     const sectionSplitter = section.find('.spacer');
 
     const box = getVisibleBox();
-    
+
+    if(!expandedBoxes[sectionID])
+        expandedBoxes[sectionID] = box;
+    else return;
+
     element.addClass("freeze");
     box.addClass('expand');
     const template = section.find('template')
@@ -35,18 +48,16 @@ function showModal(sectionID) {
         element.removeClass('flipped')
 
         element.css({
-            position: 'absolute',
+            position: 'relative',
             'z-index': 10,
             'background': '#2a2c30',
             'width': '100%',
-            height: '100%'
+            // height: '100%'
         });
         section.css({
             'background': '#2a2c30'
         });
-        box.hide()
-        console.log('done')
-
+        box.hide();
     })
 
     $(element[0]).css({

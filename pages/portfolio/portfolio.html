@@ -10,7 +10,9 @@
     <link href="./styles.css" rel="stylesheet" type="text/css"/>
     <link href="../../styles/curveStyles.css" rel="stylesheet" type="text/css"/>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/9b4ef36c87.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css" integrity="sha512-Cdvnk1SFWqcb3An6gMyqDRH40Js8qmsWcSK10I2gSifCe2LilaPMsHd6DldEvQ3uIlCb1qdRUrNeAFFleOu4xQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css"
+          integrity="sha512-Cdvnk1SFWqcb3An6gMyqDRH40Js8qmsWcSK10I2gSifCe2LilaPMsHd6DldEvQ3uIlCb1qdRUrNeAFFleOu4xQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 </head>
 <body>
@@ -83,15 +85,75 @@
 
     <template id="dustie-more">
 
-        <div class="flipped align-items-center  d-flex align-content-center flex-column container-fluid"
-             style="height: 100%">
-<!--            <img src="../../images/DustieBackground.png" style="aspect-ratio: 1433/250; width: 100%"/>-->
+        <div class="flipped align-items-center d-flex align-content-center flex-column container-fluid text-white overflow-scroll pb-5"
+             style="height: 90%">
+            <!--            <img src="../../images/DustieBackground.png" style="aspect-ratio: 1433/250; width: 100%"/>-->
 
-            <div class="container d-flex flex-row justify-content-around align-items-center">
-                <p class="text-white fw-semibold" style="font-size: 75px;">
-                    Dustie
-                </p>
+            <div class="container d-flex flex-row align-items-baseline justify-content-center">
                 <img src="../../images/Dustie.png" width="200"/>
+                <p class="fw-semibold" style="font-size: 75px;">
+                    ustie
+                </p>
+                <button class="btn btn-outline-light btn-sm mx-5" onclick="hideModal('dustie')">Close</button>
+            </div>
+
+
+            <div class="container d-flex flex-row justify-content-around">
+                <div style="flex: 0.5" class="m-5">
+                    <p class="text-decoration-underline" style="font-size: 30px">
+                        Stack and Explanations
+                    </p>
+                    <ul style="list-style-type: none; font-size: 20px">
+                        <li><i class="icon-nodejs m-1"></i>Node.js</li>
+                        <li><i class="icon-mongodb m-1"></i>MongoDB</li>
+                        <li><i class="fa-brands fa-discord mx-1" style="font-size: 15px"></i>Discord.js API</li>
+                    </ul>
+                    We used <span class="fw-bold">Node.js</span> to build this program as <span class="fw-bold">discord's API</span> was best suited and had the best documentation written in javascript.
+                    Node also had many useful libraries used to video, audio, and image manipulation such as ffmpeg and canvas that was used to make
+                    many of the games like chess or battleship. <span class="fw-bold">MongoDB</span> was also a well-supported tool in node.js that
+                    had the flexibility to store everything we needed in the bot and the website.
+
+                </div>
+
+                <div style="flex: 0.5" class="m-5">
+                    <p style="font-size: 30px" class="text-decoration-underline">
+                        Purpose and Goal
+                    </p>
+                    In late 2018, me and a team of two other people wanted to create a discord bot that could meet the needs
+                    of individuals through customizability.
+                    In the end, there were over 25,000 users who enjoyed the customizability and 24/7 usage that many other discord
+                    bots do not often provide.
+                    Its community helped shape it into what it grew to through suggestions, bug-reports, and donations.
+                    <br><br>
+                    The bot offered many tools for moderation, community engagement, music, games, and other
+                    miscellaneous tools all free and easy to use.
+
+                </div>
+
+            </div>
+
+            <div class="container d-flex flex-row justify-content-around pb-5">
+
+                <div style="flex: 0.5" class="mx-5">
+                    <p class="text-decoration-underline my-3" style="font-size: 30px">
+                        Problems Encountered
+                    </p>
+                    This was one of the first projects that all of us had worked on in a team. Therefore, we had to create
+                    thorough guidelines for developing code together. Coming up with a system where we could all easily
+                    create new commands and handle different events took some time and discussion but the flexibility that
+                    javascript provided gave us the ability to create command and event handlers which allowed us to
+                    split these things into individual files for us to separately develop in without getting in each other's way.
+                </div>
+
+                <div style="flex: 0.5" class="mx-5">
+                    <p class="text-decoration-underline my-3" style="font-size: 30px">
+                        Lessons Learned
+                    </p>
+                    I learned a great deal of being able to communicate with a team and the community you're working for.
+                    Having that customer first mindset helped grow the community around the bot and served to connect me
+                    with other clients looking for their own app.
+                </div>
+
             </div>
 
         </div>
@@ -133,7 +195,6 @@
         </div>
 
     </div>
-
 
 
     <div class="container text-white py-5 px-5 position-relative" style="z-index: 1">
@@ -182,6 +243,7 @@
 
 </section>
 <!--End Dustie Section-->
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
