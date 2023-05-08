@@ -3,6 +3,88 @@ function showModal(sectionID) {
     const section = $(`#${sectionID}`);
 
     const element = $(".layered-image");
+    const sectionSplitter = section.find('.spacer');
+
+    const box = getVisibleBox();
+    
+    element.addClass("freeze");
+    box.addClass('expand');
+    const template = section.find('template')
+
+    const [distanceX, distanceY] = getTranslationToCenterOfBigElement(box, section);
+    const [scaleX, scaleY] = getScaleFactor(section, box);
+    box.append(template.html());
+
+    // console.log(scaleX, scaleY);
+    box.parent().parent().css({//make parent z index bigger incase it chooses bottom layer's separator box
+        'z-index': 2,
+    })
+    box.css({
+        'z-index': 2,
+        'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0)
+         translate(${distanceX}px, ${distanceY + sectionSplitter.height()}px) rotateY(180deg) scaleY(${200}%)`,
+        // width: section.width(),
+        // height: section.height()
+    }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
+        /*
+        to rest:
+        box.css({transform: 'none'})
+         */
+
+        const element = $(template.clone().html()).insertAfter(sectionSplitter);
+
+        element.removeClass('flipped')
+
+        element.css({
+            position: 'absolute',
+            'z-index': 10,
+            'background': '#2a2c30',
+            'width': '100%'
+        });
+        section.css({
+            'background': '#2a2c30'
+        })
+        console.log('done')
+
+    })
+
+    $(element[0]).css({
+        'z-index': 2 //moves it above text content
+    })
+
+}
+
+function getTranslationToCenterOfBigElement($targetElement, $containerElement) {
+    const targetRect = $targetElement[0].getBoundingClientRect();
+    const containerRect = $containerElement[0].getBoundingClientRect();
+
+    const translationX = containerRect.left + containerRect.width / 2 - (targetRect.left + targetRect.width / 2);
+    const translationY = containerRect.top + containerRect.height / 2 - (targetRect.top + targetRect.height / 2);
+
+    return [translationX, translationY];
+}
+
+
+function getScaleFactor($biggerElement, $smallerElement) {
+    const parent = $biggerElement[0];
+    const child = $smallerElement[0];
+
+// get the width and height of the parent and child elements
+    const parentWidth = parent.getBoundingClientRect().width;
+    const parentHeight = parent.getBoundingClientRect().height;
+    const childWidth = child.getBoundingClientRect().width;
+    console.log(childWidth, $smallerElement.width())
+    const childHeight = child.getBoundingClientRect().height;
+
+    // console.log(parentWidth, childWidth, 'width');
+    // console.log(parentHeight, childHeight, 'height');
+// calculate the scale factor for the child element
+    const scaleX = parentWidth / childWidth;
+    const scaleY = parentHeight / childHeight;
+    return [scaleX, scaleY];
+}
+
+function getVisibleBox(){
     const allBoxes = $(`.separator-box`);
 
     const windowHeight = $(window).height();
@@ -26,73 +108,5 @@ function showModal(sectionID) {
     if(visibleBox.length === 0){
         box = $(allBoxes[0]);
     }else box = $(visibleBox[0]);
-    
-    element.addClass("freeze");
-    box.addClass('expand');
-
-
-
-    const [distanceX, distanceY] = getTranslationToCenterOfScreen(box[0]);
-    const [scaleX, scaleY] = getScaleFactor(section, box);
-
-    // console.log(scaleX, scaleY);
-    box.parent().parent().css({//make parent z index bigger incase it chooses bottom layer's separator box
-        'z-index': 2,
-    })
-    box.css({
-        'z-index': 2,
-        'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0) translate(${distanceX-58}px, ${distanceY-47}px) rotateY(180deg)`,
-        width: section.width(),
-        height: section.height()
-    }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
-        /*
-        to rest:
-        box.css({transform: 'none'})
-         */
-        // console.log(distanceX);
-        // console.log(getTranslationToCenterOfScreen(box[0]))
-
-    })
-
-    $(element[0]).css({
-        'z-index': 2 //moves it above text content
-    })
-
-    setTimeout(() => {
-
-
-
-    }, 1000);
-
-}
-
-function getTranslationToCenterOfBigElement(smallerElement, biggerElement) {
-    const rect = smallerElement.getBoundingClientRect();
-
-// Calculate the distance to the center of the screen
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    //calculate distance to move
-    const distanceX = centerX - rect.left - rect.width / 2;
-    const distanceY = centerY - rect.top - rect.height / 2;
-    return [distanceX, distanceY];
-}
-
-function getScaleFactor(biggerElement, smallerElement) {
-    const parent = biggerElement[0];
-    const child = smallerElement[0];
-
-// get the width and height of the parent and child elements
-    const parentWidth = parent.getBoundingClientRect().width;
-    const parentHeight = parent.getBoundingClientRect().height;
-    const childWidth = child.getBoundingClientRect().width;
-    console.log(childWidth, smallerElement.width())
-    const childHeight = child.getBoundingClientRect().height;
-
-    // console.log(parentWidth, childWidth, 'width');
-    // console.log(parentHeight, childHeight, 'height');
-// calculate the scale factor for the child element
-    const scaleX = parentWidth / childWidth;
-    const scaleY = parentHeight / childHeight;
-    return [scaleX, scaleY];
+    return box;
 }
