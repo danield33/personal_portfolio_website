@@ -39,7 +39,8 @@ function showModal(sectionID) {
             position: 'absolute',
             'z-index': 10,
             'background': '#2a2c30',
-            'width': '100%'
+            'width': '100%',
+            height: '100%'
         });
         section.css({
             'background': '#2a2c30'
