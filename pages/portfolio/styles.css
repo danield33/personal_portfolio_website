@@ -75,6 +75,11 @@ a > i.fa-brands {
     height: var(--height);
     margin-top: 300px;
     margin-bottom: 300px;
-    transition: all cubic-bezier(0.1, 0, 0.9, 1) 1.5s;
+    transition: all cubic-bezier(0.1, 0, 0.9, 1) 1s;
     transform-style: preserve-3d;
+}
+
+.flipped{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
 }

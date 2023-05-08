@@ -5,7 +5,6 @@ function showModal(sectionID) {
     const element = $(".layered-image");
     const allBoxes = $(`.separator-box`);
 
-    console.log(allBoxes);
     const windowHeight = $(window).height();
     const windowWidth = $(window).width();
     const visibleBox = allBoxes.filter(function() {
@@ -28,27 +27,33 @@ function showModal(sectionID) {
         box = $(allBoxes[0]);
     }else box = $(visibleBox[0]);
     
-    $(element[0]).addClass("freeze");
+    element.addClass("freeze");
     box.addClass('expand');
 
 
-    const [distanceX, distanceY] = getTranslationToCenterOfScreen(box[0]);
-    const scale = getScaleFactor(section, box);
 
+    const [distanceX, distanceY] = getTranslationToCenterOfScreen(box[0]);
+    const [scaleX, scaleY] = getScaleFactor(section, box);
+
+    // console.log(scaleX, scaleY);
     box.parent().parent().css({//make parent z index bigger incase it chooses bottom layer's separator box
         'z-index': 2,
     })
     box.css({
         'z-index': 2,
-        'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0) translate(${distanceX}px, ${distanceY}px) rotateY(180deg)  scale(${scale})`,
+        'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0) translate(${distanceX-58}px, ${distanceY-47}px) rotateY(180deg)`,
+        width: section.width(),
+        height: section.height()
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
-
         /*
         to rest:
         box.css({transform: 'none'})
          */
+        // console.log(distanceX);
+        // console.log(getTranslationToCenterOfScreen(box[0]))
 
     })
+
     $(element[0]).css({
         'z-index': 2 //moves it above text content
     })
@@ -61,7 +66,7 @@ function showModal(sectionID) {
 
 }
 
-function getTranslationToCenterOfScreen(smallerElement) {
+function getTranslationToCenterOfBigElement(smallerElement, biggerElement) {
     const rect = smallerElement.getBoundingClientRect();
 
 // Calculate the distance to the center of the screen
@@ -81,10 +86,13 @@ function getScaleFactor(biggerElement, smallerElement) {
     const parentWidth = parent.getBoundingClientRect().width;
     const parentHeight = parent.getBoundingClientRect().height;
     const childWidth = child.getBoundingClientRect().width;
+    console.log(childWidth, smallerElement.width())
     const childHeight = child.getBoundingClientRect().height;
 
+    // console.log(parentWidth, childWidth, 'width');
+    // console.log(parentHeight, childHeight, 'height');
 // calculate the scale factor for the child element
     const scaleX = parentWidth / childWidth;
     const scaleY = parentHeight / childHeight;
-    return Math.max(scaleX, scaleY);
+    return [scaleX, scaleY];
 }
