@@ -29,7 +29,8 @@ function hideModal(sectionID) {
 
     box.show().css({//remove transformations
         transform: 'none',
-        'z-index': 0
+        'z-index': 0,
+        '--height': ''
     })
 
 
@@ -41,12 +42,13 @@ function hideModal(sectionID) {
     box.parent().parent().css({//reset z-index
         'z-index': '',
     }).removeClass('freeze')
-    .one('transitionend webkitTransitionEnd oTransitionEnd', () => {
+    .one('transitionend webkitTransitionEnd oTransitionEnd', () => {//need to repeat the css modifications twice b/c of css transitions removing changes
         box.find('div').remove();
 
         box.show().css({//remove transformations
             transform: 'none',
-            'z-index': 0
+            'z-index': 0,
+            '--height': ''
         }).parent().parent().css({
             'z-index': 0
         })
@@ -92,6 +94,7 @@ function showModal(sectionID) {
 
     box.css({
         'z-index': 2,
+        '--height': '500px',
         'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0)
          translate(${distanceX}px, ${distanceY + sectionSplitter.height()}px) rotateY(180deg) scaleY(${200}%)`,
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
@@ -109,6 +112,7 @@ function showModal(sectionID) {
             'background': '#2a2c30'
         });
         box.hide();
+        layeredImage.removeClass('freeze');
     })
 
     $(element[0]).css({
