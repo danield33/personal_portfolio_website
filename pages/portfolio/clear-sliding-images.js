@@ -3,14 +3,14 @@ const expandedBoxes = {}
 function hideModal(sectionID) {
 
     const section = $(`#${sectionID}`);
-    const box = expandedBoxes[sectionID];
+    const box = expandedBoxes[sectionID][0];
     const sectionSplitter = section.find('.spacer');
-    const modal = sectionSplitter.next();
+    const modal = expandedBoxes[sectionID][1];
 
-
+    console.log(expandedBoxes[sectionID]);
     box.show().css({//remove transformations
         transform: 'none',
-        'z-index': 0,
+        'z-index': null,
         '--height': ''
     })
 
@@ -21,28 +21,30 @@ function hideModal(sectionID) {
     modal.css({
         'visibility': 'hidden',
         'display': 'none',
-    }).remove();
+    }).hide();
 
     box.parent().parent().css({//reset z-index
-        'z-index': '',
+        'z-index': null,
         visibility: 'visible'
     }).removeClass('freeze')
     .one('transitionend webkitTransitionEnd oTransitionEnd', () => {//need to repeat the css modifications twice b/c of css transitions removing changes
-        box.find('div').remove();
+        if(expandedBoxes[sectionID].length === 2){
+            box.find('div').remove();
 
-        box.show().css({//remove transformations
-            transform: 'none',
-            'z-index': 0,
-            '--height': ''
-        }).parent().parent().css({
-            'z-index': 0,
-            visibility: 'visible'
-        }).removeClass('freeze')
+            box.show().css({//remove transformations
+                transform: 'none',
+                'z-index': null,
+                '--height': ''
+            }).parent().parent().css({
+                'z-index': null,
+                visibility: 'visible'
+            }).removeClass('freeze')
 
-        section.css({//make background default color
-            background: 'var(--color-primary)'
-        });
-        sectionSplitter.next().remove();
+            section.css({//make background default color
+                background: 'var(--color-primary)'
+            });
+            sectionSplitter.next().remove();
+        }
 
     });
 
@@ -64,7 +66,7 @@ function showModal(sectionID) {
     const layeredImage = box.parent().parent();
 
     if (!expandedBoxes[sectionID])
-        expandedBoxes[sectionID] = box;
+        expandedBoxes[sectionID] = [box];
     else return;
 
     layeredImage.addClass("freeze").css({//make parent z index bigger incase it chooses bottom layer's separator box
@@ -85,21 +87,25 @@ function showModal(sectionID) {
          translate(${distanceX}px, ${distanceY + sectionSplitter.height()}px) rotateY(180deg) scaleY(200%)`,
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
 
-        const element = $(template.clone().html()).insertAfter(sectionSplitter);
+        if(expandedBoxes[sectionID].length === 1){
+            const element = $(template.clone().html()).insertAfter(sectionSplitter);
 
-        element.removeClass('flipped')
-            .css({
-                position: 'relative',
-                'z-index': 10,
-                'background': 'var(--color-secondary)',
-                'width': '100%',
+            element.removeClass('flipped')
+                .css({
+                    position: 'relative',
+                    'z-index': 10,
+                    'background': 'var(--color-secondary)',
+                    'width': '100%',
+                });
+            expandedBoxes[sectionID].push(element);
+            section.css({
+                'background': 'var(--color-secondary)'
             });
-        section.css({
-            'background': 'var(--color-secondary)'
-        });
-        box.hide();
-        layeredImage.css('visibility', 'hidden');
-        Prism.highlightAll();
+            box.hide();
+            layeredImage.css('visibility', 'hidden');
+            Prism.highlightAll();
+        }
+
     });
 
     $(element[0]).css({
