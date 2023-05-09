@@ -16,7 +16,7 @@ function hideModal(sectionID) {
 
 
     section.css({//make background default color
-        background: '#36393F'
+        background: 'var(--color-primary)'
     });
     modal.css('visibility', 'hidden');
 
@@ -90,7 +90,7 @@ function showModal(sectionID) {
                 'width': '100%',
             });
         section.css({
-            'background': '#2a2c30'
+            'background': 'var(--color-secondary)'
         });
         box.hide();
     })
