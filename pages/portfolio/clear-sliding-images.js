@@ -18,7 +18,10 @@ function hideModal(sectionID) {
     section.css({//make background default color
         background: 'var(--color-primary)'
     });
-    modal.css('visibility', 'hidden');
+    modal.css({
+        'visibility': 'hidden',
+        'display': 'none',
+    }).remove();
 
     box.parent().parent().css({//reset z-index
         'z-index': '',

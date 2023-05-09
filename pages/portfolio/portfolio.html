@@ -343,18 +343,21 @@
                     <p class="text-decoration-underline my-3" style="font-size: 30px">
                         Problems Encountered
                     </p>
-                    A challenge for this project was that it has quite a lot of code for each aspect that a coach would
-                    need.
-                    Therefore, it needs to be testable. However, this testing process did not come to mind at the start
-                    of development
-                    so much of the code had already been developed before we began testing. While Test driven
-                    development
-                    is not must, it is very helpful to ensure your code is testable and in working condition whenever
-                    you refactor code.
-                    Although this repository is private, here is a code snippet of a unit test written.
+                    <div class="d-flex flex-column align-items-center">
+                        <p>
+                            A challenge for this project was that it has quite a lot of code for each aspect that a coach would
+                            need.
+                            Therefore, it needs to be testable. However, this testing process did not come to mind at the start
+                            of development
+                            so much of the code had already been developed before we began testing. While Test driven
+                            development
+                            is not must for every project, it is very helpful to ensure your code is testable and in working condition whenever
+                            you refactor code, especially in large projects with multiple people involved.
+                            Although this repository is private, here is a code snippet of a unit test written.
+                        </p>
 
-                    <pre class="language-javascript line-numbers" style="height: 50%">
-
+                    </div>
+                    <pre class="language-javascript line-numbers" id="edge-code">
                     <code class="language-javascript">
 import React from 'react';
 import {
@@ -462,10 +465,15 @@ describe("Login form", () =&gt; {
                     <p class="text-decoration-underline my-3" style="font-size: 30px">
                         Lessons Learned
                     </p>
-                    I learned a great deal of being able to communicate with a team and the community you're working
-                    for.
-                    Having that customer first mindset helped grow the community around the bot and served to connect me
-                    with other clients looking for their own app.
+                    Working with a team of people has a lot of benefits and if you're able to structure that in a clear way
+                    that's transparent to everyone, it can be a lot of fun and the work of setting that up is very rewarding.
+                    Because of this project and its use of the scrum framework, I was able to get a certification as a
+                    <a href="https://www.scrum.org/assessments/professional-scrum-developer-certification" target="_blank" class="text-white">
+                        <b>Professional Scrum Developer.</b>
+                    </a>
+                    <br><br>As is the nature of working with many people, you learn a lot from other people and what they're good at.
+                    From the people on the team, a few things I've learned are UI/UX design, CI-CD/devops and a lot of the business side of releasing an app.
+
                 </div>
 
             </div>
@@ -567,6 +575,7 @@ describe("Login form", () =&gt; {
 <script src="../../index.js"></script>
 <script src="./clear-sliding-images.js"></script>
 <script src="../../scripts/prism.js"></script>
+
 
 </body>
 
