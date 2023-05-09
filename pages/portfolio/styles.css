@@ -7,6 +7,12 @@
     --end-left-offset: 0px;
     --height: 1000px;
     --anim-direction: alternate;
+    --color-primary: #36393F;
+    --color-secondary: #2a2c30;
+}
+
+.portfolio-section{
+    min-height: 1000px;
 }
 
 #portfolio-introduction {
@@ -37,8 +43,14 @@ a > i.fa-brands {
     z-index: 1;
 }
 
+.layered-image img{
+    border-width: 30px;
+    border-style: solid;
+    border-color: var(--color-secondary);
+}
+
 .discord-bgcolor {
-    background-color: #36393F;
+    background-color: var(--color-primary);
 }
 
 .layered-image.slide-right {
@@ -70,7 +82,7 @@ a > i.fa-brands {
 }
 
 .separator-box {
-    background-color: #2a2c30;
+    background-color: var(--color-secondary);
     width: 100%;
     height: var(--height);
     margin-top: 300px;

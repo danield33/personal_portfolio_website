@@ -1,24 +1,5 @@
 const expandedBoxes = {}
 
-function resetCss(sectionID){
-    const section = $(`#${sectionID}`);
-    const box = expandedBoxes[sectionID];
-    const sectionSplitter = section.find('.spacer');
-    const modal = sectionSplitter.next();
-
-
-    box.show().css({//remove transformations
-        transform: 'none',
-        'z-index': 0
-    })
-
-
-    section.css({//make background default color
-        background: '#36393F'
-    });
-    modal.remove();
-}
-
 function hideModal(sectionID) {
 
     const section = $(`#${sectionID}`);
@@ -54,7 +35,7 @@ function hideModal(sectionID) {
         }).removeClass('freeze')
 
         section.css({//make background default color
-            background: '#36393F'
+            background: 'var(--color-primary)'
         });
         sectionSplitter.next().remove();
 
@@ -105,7 +86,7 @@ function showModal(sectionID) {
             .css({
                 position: 'relative',
                 'z-index': 10,
-                'background': '#2a2c30',
+                'background': 'var(--color-secondary)',
                 'width': '100%',
             });
         section.css({
