@@ -587,7 +587,7 @@ describe("Login form", () =&gt; {
                 <p class="fw-semibold mx-3" style="font-size: 75px;">
                     Edge Coaching
                 </p>
-                <button class="btn btn-outline-light btn-sm mx-2" onclick="hideModal('the-edge')">Close</button>
+                <button class="btn btn-outline-light btn-sm mx-2" onclick="hideModal('rating-shift')">Close</button>
             </div>
 
 
@@ -672,106 +672,6 @@ describe("Login form", () =&gt; {
                         </p>
 
                     </div>
-                    <pre class="language-javascript line-numbers" id="edge-code">
-                    <code class="language-javascript">
-import React from 'react';
-import {
-    fireEvent,
-    render,
-    waitFor
-} from '@testing-library/react-native';
-import LoginScreen from '../login/index';
-
-describe("Login form", () =&gt; {
-
-            const routeMock = (fn) =&gt;
-            ({
-                params: {
-                    params: {
-                        onLogin: fn
-                    }
-                }
-            })
-
-            it("Validates input on correct input", async () =&gt; {
-
-                    const email = 'user@gmail.com';
-                    const password = '12345678';
-
-                    const handleLogin = jest.fn();
-                    const navigation = {
-                        navigate: jest.fn()
-                    };
-
-                    const {
-                        getByLabelText,
-                        getByText
-                    } = render( &lt;LoginScreen navigation = {
-                            navigation
-                        }
-                        route = {
-                            routeMock(handleLogin)
-                        }
-                        /&gt;);
-
-                        const emailInp = getByLabelText('Email');
-                        const passInp = getByLabelText('Password');
-
-                        fireEvent.changeText(emailInp, email); fireEvent.changeText(passInp, password);
-
-                        const submitButton = getByText('Login'); fireEvent.press(submitButton);
-
-
-                        await waitFor(() =&gt; {
-                            expect(handleLogin).toHaveBeenCalledTimes(1);
-                        });
-
-                        expect(handleLogin).toHaveBeenCalledWith({
-                            email,
-                            password,
-                            rememberLogin: false,
-                            username: ''
-                        }, expect.anything())
-
-
-                    });
-
-                it("Correctly navigates to different pages", async () =&gt; {
-
-                        const handleLogin = jest.fn();
-                        const navigation = {
-                            navigate: jest.fn()
-                        };
-
-                        const {
-                            getByLabelText,
-                            getByText
-                        } = render( &lt;LoginScreen navigation = {
-                                navigation
-                            }
-                            route = {
-                                routeMock(handleLogin)
-                            }
-                            /&gt;);
-
-                            const forgotButton = getByLabelText('Forgot Password'); //tests forgot password navigation
-                            fireEvent.press(forgotButton); await waitFor(() =&gt; {
-                                expect(navigation.navigate).toHaveBeenCalledTimes(1);
-                            });
-
-                            expect(navigation.navigate).toHaveBeenCalledWith('ForgotPassword')
-
-                            const createAccountButton = getByLabelText('Create Account'); //tests the create account button navigation
-                            fireEvent.press(createAccountButton); await waitFor(() =&gt; {
-                                expect(navigation.navigate).toHaveBeenCalledTimes(2);
-                            });
-
-                            expect(navigation.navigate).toHaveBeenCalledWith('CreateAccountFlow')
-
-                        })
-
-                });                    </code>
-                    </pre>
 
 
                 </div>
@@ -807,7 +707,6 @@ describe("Login form", () =&gt; {
             <img src="../../images/rating-shift/login-screen.png"/>
             <div class="separator-box"></div>
             <img src="../../images/rating-shift/app-page.png"/>
-<!--            <div class="separator-box"></div>-->
             <img src="../../images/rating-shift/app-page-2.png"/>
             <div class="separator-box" style="--height: 500px;"></div>
 
@@ -864,13 +763,13 @@ describe("Login form", () =&gt; {
                     process.
                 </p>
                 <div class="d-flex flex-sm-column flex-md-row justify-content-around">
-                    <a class="btn btn-secondary btn-lg d-flex justify-content-center align-items-center align-content-between">
+                    <a class="btn btn-outline-light btn-lg d-flex justify-content-center align-items-center align-content-between">
                         <span class="d-none d-md-block mx-2">
-                            Repository Privated
+                            Check it on Github
                         </span>
                         <i class="fa-brands fa-github text-white"></i>
                     </a>
-                    <button class="btn btn-light" onclick="showModal('the-edge')">
+                    <button class="btn btn-light" onclick="showModal('rating-shift')">
                         Learn More
                     </button>
                 </div>
