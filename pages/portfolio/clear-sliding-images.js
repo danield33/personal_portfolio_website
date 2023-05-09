@@ -96,7 +96,7 @@ function showModal(sectionID) {
         'z-index': 2,
         '--height': '500px',
         'transform': `matrix(3.13, 0.736, -3.86, 4.97, 0, 0)
-         translate(${distanceX}px, ${distanceY + sectionSplitter.height()}px) rotateY(180deg) scaleY(${200}%)`,
+         translate(${distanceX}px, ${distanceY + sectionSplitter.height()}px) rotateY(180deg) scaleY(200%)`,
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
 
         const element = $(template.clone().html()).insertAfter(sectionSplitter);
