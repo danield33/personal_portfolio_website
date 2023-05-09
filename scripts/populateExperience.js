@@ -7,7 +7,7 @@ const experienceItems = [
     {
         name: 'Dustie',
         description: 'Worked in a team of 5 people to create a multi-purposed discord bot capable of providing music, moderation, multimedia manipulation tools, games, and economy systems.',
-        image: 'images/Dustie.png'
+        image: './images/dustie/Dustie.png'
     },
     {
         name: 'Delaware County Auction',
