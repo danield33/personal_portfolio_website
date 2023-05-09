@@ -63,3 +63,8 @@
 .dustie-layer{
     background-image: url('../images/waves/white-to-discord.svg')
 }
+
+.edge-layer{
+    background-image: url('../images/waves/discord-to-edge.svg');
+    aspect-ratio: 960/112.74;
+}
