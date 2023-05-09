@@ -571,6 +571,318 @@ describe("Login form", () =&gt; {
 
 <!--End The Edge Section-->
 
+<section id="rating-shift" class="overflow-hidden portfolio-section"
+         style="--color-primary: #7065b9; --color-secondary: #4659b6">
+
+    <div class="spacer rating-layer" style="z-index: 5; position: relative"></div>
+
+
+    <template>
+
+        <div class="flipped align-items-center d-flex align-content-center flex-column container-fluid text-white overflow-scroll pb-5 position-absolute"
+             style="height: 90%">
+
+            <div class="container d-flex flex-row align-items-center justify-content-center">
+                <img src="../../images/TheEdge.png" width="200"/>
+                <p class="fw-semibold mx-3" style="font-size: 75px;">
+                    Edge Coaching
+                </p>
+                <button class="btn btn-outline-light btn-sm mx-2" onclick="hideModal('the-edge')">Close</button>
+            </div>
+
+
+            <div class="container d-flex flex-row justify-content-around">
+                <div style="flex: 0.5" class="m-5">
+                    <p class="text-decoration-underline" style="font-size: 30px">
+                        Stack and Explanations
+                    </p>
+                    <ul style="list-style-type: none; font-size: 20px">
+                        <li>
+                            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="20"
+                                 height="20">
+                                <path fill="white" d="M0 200V0h400v400H0"/>
+                                <path
+                                        fill="black"
+                                        d="M87.7 200.7V217h52v148h36.9V217h52v-16c0-9 0-16.3-.4-16.5 0-.3-31.7-.4-70.2-.4l-70 .3v16.4l-.3-.1zM321.4 184c10.2 2.4 18 7 25 14.3 3.7 4 9.2 11 9.6 12.8 0 .6-17.3 12.3-27.8 18.8-.4.3-2-1.4-3.6-4-5.2-7.4-10.5-10.6-18.8-11.2-12-.8-20 5.5-20 16 0 3.2.6 5 1.8 7.6 2.7 5.5 7.7 8.8 23.2 15.6 28.6 12.3 41 20.4 48.5 32 8.5 13 10.4 33.4 4.7 48.7-6.4 16.7-22 28-44.3 31.7-7 1.2-23 1-30.5-.3-16-3-31.3-11-40.7-21.3-3.7-4-10.8-14.7-10.4-15.4l3.8-2.4 15-8.7 11.3-6.6 2.6 3.5c3.3 5.2 10.7 12.2 15 14.6 13 6.7 30.4 5.8 39-2 3.7-3.4 5.3-7 5.3-12 0-4.6-.7-6.7-3-10.2-3.2-4.4-9.6-8-27.6-16-20.7-8.8-29.5-14.4-37.7-23-4.7-5.2-9-13.3-11-20-1.5-5.8-2-20-.6-25.7 4.3-20 19.4-34 41-38 7-1.4 23.5-.8 30.4 1l-.2.2z"/>
+                            </svg>
+                            Typescript
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" id="firebase">
+                                <path fill="white"
+                                      d="M5.239 15.063 7.21 2.381a.453.453 0 0 1 .847-.145l2.12 3.979-4.938 8.848zM19.24 18.14 17.363 6.469a.454.454 0 0 0-.766-.246L4.76 18.14l6.55 3.691c.411.23.912.23 1.323 0l6.607-3.691zM13.917 7.955 12.4 5.052a.452.452 0 0 0-.8 0L4.939 16.989l8.978-9.034z"></path>
+                            </svg>
+                            Firebase
+                        </li>
+                        <li><i class="icon-reactjs pe-2"></i>React Native</li>
+                        <li><i class="icon-aws m-1"></i>AWS</li>
+                    </ul>
+                    We chose <b>TypeScript</b> for better code maintainability as our company grows. Its static typing
+                    and
+                    organizational structures make it easier to handle larger codebases compared to JavaScript.
+                    <br>
+                    For the app requested by a softball coach, we needed cross-platform compatibility. <b>React
+                    Native</b>
+                    allowed us to build for both Android and iOS efficiently, with less code required.
+                    <br>
+                    <b>Firebase</b> was initially a great choice as it provides a real-time NoSQL database for
+                    synchronization
+                    and communication. It also offers convenient authentication and user management features.
+                    However, we are transitioning to <b>AWS cloud</b> services for improved scalability, as Firebase did
+                    not
+                    scale well and had pricing limitations after the free tier.
+
+                </div>
+
+                <div style="flex: 0.5" class="m-5">
+                    <p style="font-size: 30px" class="text-decoration-underline">
+                        Purpose and Goal
+                    </p>
+                    In 2019, a softball coach was interested in making her workflow digital. Rather than using many
+                    tools to help her coach,
+                    she wanted something where she could do her work in one place.
+                    The Edge is an app to organize youth instructors working privately with athletes/students.
+                    It puts all aspects of training into one place including (but not limited to) scheduling, drills,
+                    measuring progress, communication, payment and notes on training.
+                    <br>
+                    By employing the agile methodology through scrum,
+                    I am able to work with a team of 4 others to get this project off the ground.
+
+                </div>
+
+            </div>
+
+            <div class="container d-flex flex-row justify-content-around pb-5" style="flex: 1">
+
+                <div style="flex: 0.5" class="mx-5 w-50">
+                    <p class="text-decoration-underline my-3" style="font-size: 30px">
+                        Problems Encountered
+                    </p>
+                    <div class="d-flex flex-column align-items-center">
+                        <p>
+                            A challenge for this project was that it has quite a lot of code for each aspect that a coach would
+                            need.
+                            Therefore, it needs to be testable. However, this testing process did not come to mind at the start
+                            of development
+                            so much of the code had already been developed before we began testing. While Test driven
+                            development
+                            is not must for every project, it is very helpful to ensure your code is testable and in working condition whenever
+                            you refactor code, especially in large projects with multiple people involved.
+                            Although this repository is private, here is a code snippet of a unit test written.
+                        </p>
+
+                    </div>
+                    <pre class="language-javascript line-numbers" id="edge-code">
+                    <code class="language-javascript">
+import React from 'react';
+import {
+    fireEvent,
+    render,
+    waitFor
+} from '@testing-library/react-native';
+import LoginScreen from '../login/index';
+
+describe("Login form", () =&gt; {
+
+            const routeMock = (fn) =&gt;
+            ({
+                params: {
+                    params: {
+                        onLogin: fn
+                    }
+                }
+            })
+
+            it("Validates input on correct input", async () =&gt; {
+
+                    const email = 'user@gmail.com';
+                    const password = '12345678';
+
+                    const handleLogin = jest.fn();
+                    const navigation = {
+                        navigate: jest.fn()
+                    };
+
+                    const {
+                        getByLabelText,
+                        getByText
+                    } = render( &lt;LoginScreen navigation = {
+                            navigation
+                        }
+                        route = {
+                            routeMock(handleLogin)
+                        }
+                        /&gt;);
+
+                        const emailInp = getByLabelText('Email');
+                        const passInp = getByLabelText('Password');
+
+                        fireEvent.changeText(emailInp, email); fireEvent.changeText(passInp, password);
+
+                        const submitButton = getByText('Login'); fireEvent.press(submitButton);
+
+
+                        await waitFor(() =&gt; {
+                            expect(handleLogin).toHaveBeenCalledTimes(1);
+                        });
+
+                        expect(handleLogin).toHaveBeenCalledWith({
+                            email,
+                            password,
+                            rememberLogin: false,
+                            username: ''
+                        }, expect.anything())
+
+
+                    });
+
+                it("Correctly navigates to different pages", async () =&gt; {
+
+                        const handleLogin = jest.fn();
+                        const navigation = {
+                            navigate: jest.fn()
+                        };
+
+                        const {
+                            getByLabelText,
+                            getByText
+                        } = render( &lt;LoginScreen navigation = {
+                                navigation
+                            }
+                            route = {
+                                routeMock(handleLogin)
+                            }
+                            /&gt;);
+
+                            const forgotButton = getByLabelText('Forgot Password'); //tests forgot password navigation
+                            fireEvent.press(forgotButton); await waitFor(() =&gt; {
+                                expect(navigation.navigate).toHaveBeenCalledTimes(1);
+                            });
+
+                            expect(navigation.navigate).toHaveBeenCalledWith('ForgotPassword')
+
+                            const createAccountButton = getByLabelText('Create Account'); //tests the create account button navigation
+                            fireEvent.press(createAccountButton); await waitFor(() =&gt; {
+                                expect(navigation.navigate).toHaveBeenCalledTimes(2);
+                            });
+
+                            expect(navigation.navigate).toHaveBeenCalledWith('CreateAccountFlow')
+
+                        })
+
+                });                    </code>
+                    </pre>
+
+
+                </div>
+
+                <div style="flex: 0.5" class="mx-5">
+                    <p class="text-decoration-underline my-3" style="font-size: 30px">
+                        Lessons Learned
+                    </p>
+                    Working with a team of people has a lot of benefits and if you're able to structure that in a clear way
+                    that's transparent to everyone, it can be a lot of fun and the work of setting that up is very rewarding.
+                    Because of this project and its use of the scrum framework, I was able to get a certification as a
+                    <a href="https://www.scrum.org/assessments/professional-scrum-developer-certification" target="_blank" class="text-white">
+                        <b>Professional Scrum Developer.</b>
+                    </a>
+                    <br><br>As is the nature of working with many people, you learn a lot from other people and what they're good at.
+                    From the people on the team, a few things I've learned are UI/UX design, CI-CD/devops and a lot of the business side of releasing an app.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </template>
+
+
+    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 36s; --start-top-offset: -3000px; --start-left-offset: -4000px"
+    >
+
+        <div class="d-flex flex-column">
+            <div class="separator-box" style="--height: 500px"></div>
+            <img src="../../images/the-edge/Drill-Editor.png"/>
+            <div class="separator-box"></div>
+            <img src="../../images/the-edge/Calendar.png"/>
+            <div class="separator-box"></div>
+            <img src="../../images/the-edge/Question-Editor.png"/>
+            <div class="separator-box"></div>
+            <img src="../../images/the-edge/Login-Screen.png"/>
+            <div class="separator-box" style="--height: 500px;"></div>
+
+        </div>
+
+    </div>
+
+    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 60s;
+          --start-top-offset: -300px; --start-left-offset: -1700px;
+          --end-top-offset: 400px; --end-left-offset: -500px;
+          --anim-direction: alternate-reverse;
+"
+    >
+
+        <div class="d-flex flex-column position-relative">
+            <div class="separator-box" style="--height: 500px"></div>
+            <img src="../../images/the-edge/Question-Responding.png" style=""/>
+            <div class="separator-box" style="--height: 500px"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container text-white py-5 px-5 position-relative" style="z-index: 1">
+        <div class="d-flex justify-content-around align-items-center">
+
+            <div class="d-flex flex-column col-4 dustie-content" style="">
+                <div class="d-flex flex-row align-items-center">
+
+                    <p class="h1 text-start align-self-start fadeIn p-1">Edge Coaching</p>
+                    <a href="https://reactnative.dev" title="React Native" target="_blank">
+                        <i class="icon-reactjs m-2"></i>
+                    </a>
+                    <a href="https://www.typescriptlang.org" title="Typescript" target="_blank">
+                        <img src="../../images/icons/typescript.svg" width="20"/>
+                    </a>
+
+                    <a href="https://firebase.google.com/" title="Firebase" target="_blank">
+                        <img src="../../images/icons/firebase.svg"/>
+                    </a>
+
+                    <a href="https://aws.amazon.com" title="AWS" target="_blank">
+                        <i class="icon-aws mx-1"></i>
+                    </a>
+
+                </div>
+
+                <p class="text-start fadeIn">
+                    Edge Coaching is a scheduling, assignment, analytics, and communication platform that provides
+                    coaches,
+                    students, and parents a single point of participation in the coaching, learning, and improvement
+                    process.
+                </p>
+                <div class="d-flex flex-sm-column flex-md-row justify-content-around">
+                    <a class="btn btn-secondary btn-lg d-flex justify-content-center align-items-center align-content-between">
+                        <span class="d-none d-md-block mx-2">
+                            Repository Privated
+                        </span>
+                        <i class="fa-brands fa-github text-white"></i>
+                    </a>
+                    <button class="btn btn-light" onclick="showModal('the-edge')">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

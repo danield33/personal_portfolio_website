@@ -14,6 +14,8 @@
 
 .portfolio-section{
     min-height: 1000px;
+    background-color: var(--color-primary);
+    position: relative;
 }
 
 #portfolio-introduction {

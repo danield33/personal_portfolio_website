@@ -68,3 +68,8 @@
     background-image: url('../images/waves/discord-to-edge.svg');
     aspect-ratio: 960/112.74;
 }
+
+.rating-layer{
+    background-image: url('../images/waves/edge-to-rating.svg');
+    aspect-ratio: 960/105;
+}
