@@ -609,8 +609,16 @@ describe("Login form", () =&gt; {
                             Firebase
                         </li>
                         <li><i class="icon-reactjs pe-2"></i>React Native</li>
+<!--                        <li style="list-style-type: disc">-->
+
+                        &nbsp;&nbsp;&#8226;&nbsp; Express
+<!--                        </li>-->
                     </ul>
-                    I chose to use
+                    I chose to use node.js, firebase, and react native because I had become pretty familiar with the three
+                    after working on The Edge Coaching project for a while. In addition to these three, I used an <b>express server
+                    in order to communicate between the app and the server that feeds the app information about other apps.</b>
+                    The server web-scrapes information from other sources and interprets the information and passes it onto
+                    the client on the phone.
 
                 </div>
 
@@ -618,15 +626,13 @@ describe("Login form", () =&gt; {
                     <p style="font-size: 30px" class="text-decoration-underline">
                         Purpose and Goal
                     </p>
-                    In 2019, a softball coach was interested in making her workflow digital. Rather than using many
-                    tools to help her coach,
-                    she wanted something where she could do her work in one place.
-                    The Edge is an app to organize youth instructors working privately with athletes/students.
-                    It puts all aspects of training into one place including (but not limited to) scheduling, drills,
-                    measuring progress, communication, payment and notes on training.
-                    <br>
-                    By employing the agile methodology through scrum,
-                    I am able to work with a team of 4 others to get this project off the ground.
+                    Every year, an organization called
+                    <a href="https://bpa.org" target="_blank" style="color: white"><b>Business Professionals of America</b></a>
+                    hosts an event for different age groups across America. My technical high school, The Delaware Area Career Center,
+                    participates in this each year, and I was selected to attend the national competition for the mobile application development event.
+                    The theme for that year was to create an app that allows you to review a different type of app.
+                    Because of this, I created an app that lets you review, search, and rate all different kinds of app
+                    on both the app store and Google Play Store in one spot.
 
                 </div>
 
@@ -640,15 +646,13 @@ describe("Login form", () =&gt; {
                     </p>
                     <div class="d-flex flex-column align-items-center">
                         <p>
-                            A challenge for this project was that it has quite a lot of code for each aspect that a coach would
-                            need.
-                            Therefore, it needs to be testable. However, this testing process did not come to mind at the start
-                            of development
-                            so much of the code had already been developed before we began testing. While Test driven
-                            development
-                            is not must for every project, it is very helpful to ensure your code is testable and in working condition whenever
-                            you refactor code, especially in large projects with multiple people involved.
-                            Although this repository is private, here is a code snippet of a unit test written.
+                            The challenge for creating this app was determining how to get information about other apps to rate.
+                            At first, I wanted to use an api such as 42Matters. However, they had a very limiting free tier that
+                            wouldn't last for the duration I needed. Therefore, I needed to scrape the information right off of various
+                            websites that provided it. However, in react native, it is difficult to web scrape information that is server side rendered.
+                            So I opted to do it on an express server where I could use libraries like <b>puppeteer</b> that could wait for
+                            all the information to be loaded. Using this method allowed me to successfully get information about each app
+                            and rate, review, and search for them accordingly.
                         </p>
 
                     </div>
@@ -660,15 +664,10 @@ describe("Login form", () =&gt; {
                     <p class="text-decoration-underline my-3" style="font-size: 30px">
                         Lessons Learned
                     </p>
-                    Working with a team of people has a lot of benefits and if you're able to structure that in a clear way
-                    that's transparent to everyone, it can be a lot of fun and the work of setting that up is very rewarding.
-                    Because of this project and its use of the scrum framework, I was able to get a certification as a
-                    <a href="https://www.scrum.org/assessments/professional-scrum-developer-certification" target="_blank" class="text-white">
-                        <b>Professional Scrum Developer.</b>
-                    </a>
-                    <br><br>As is the nature of working with many people, you learn a lot from other people and what they're good at.
-                    From the people on the team, a few things I've learned are UI/UX design, CI-CD/devops and a lot of the business side of releasing an app.
-
+                    Working on this project, I learned that presentation is everything. Being able to communicate
+                    well with your audience (judges) that may not know all the technical details is very crucial to
+                    gaining support for your work; weather that translates into potential stakeholders or other opportunities for work,
+                    being able to communicate to a non-technical audience is an invaluable skill to all engineers.
                 </div>
 
             </div>
