@@ -79,6 +79,11 @@ body {
     position: relative;
 }
 
+#dustie1{
+    background-color: #36393F;
+    position: relative;
+}
+
 
 #linkedin {
     background: linear-gradient(300deg, #0072b1 10%, #00569a 100%);

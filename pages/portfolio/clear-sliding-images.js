@@ -73,7 +73,7 @@ function showModal(sectionID) {
     const element = $(".layered-image");
     const sectionSplitter = section.find('.spacer');
 
-    const box = getVisibleBox();
+    const box = getVisibleBox(section);
 
     const layeredImage = box.parent().parent();
 
@@ -151,8 +151,8 @@ function getScaleFactor($biggerElement, $smallerElement) {
     return [scaleX, scaleY];
 }
 
-function getVisibleBox() {
-    const allBoxes = $(`.separator-box`);
+function getVisibleBox(section) {
+    const allBoxes = section.find(`.separator-box`);
 
     const windowHeight = $(window).height();
     const windowWidth = $(window).width();

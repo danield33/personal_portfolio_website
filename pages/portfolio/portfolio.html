@@ -243,7 +243,168 @@
 </section>
 <!--End Dustie Section-->
 
+<section id="dustie1" class="overflow-hidden" style="height: 1000px">
 
+    <div class="spacer dustie-layer" style="z-index: 5; position: relative"></div>
+
+
+    <template>
+
+        <div class="flipped align-items-center d-flex align-content-center flex-column container-fluid text-white overflow-scroll pb-5"
+             style="height: 90%">
+            <!--            <img src="../../images/DustieBackground.png" style="aspect-ratio: 1433/250; width: 100%"/>-->
+
+            <div class="container d-flex flex-row align-items-baseline justify-content-center">
+                <img src="../../images/Dustie.png" width="200"/>
+                <p class="fw-semibold" style="font-size: 75px;">
+                    ustie
+                </p>
+                <button class="btn btn-outline-light btn-sm mx-5" onclick="hideModal('dustie1')">Close</button>
+            </div>
+
+
+            <div class="container d-flex flex-row justify-content-around">
+                <div style="flex: 0.5" class="m-5">
+                    <p class="text-decoration-underline" style="font-size: 30px">
+                        Stack and Explanations
+                    </p>
+                    <ul style="list-style-type: none; font-size: 20px">
+                        <li><i class="icon-nodejs m-1"></i>Node.js</li>
+                        <li><i class="icon-mongodb m-1"></i>MongoDB</li>
+                        <li><i class="fa-brands fa-discord mx-1" style="font-size: 15px"></i>Discord.js API</li>
+                    </ul>
+                    We used <span class="fw-bold">Node.js</span> to build this program as <span class="fw-bold">discord's API</span> was best suited and had the best documentation written in javascript.
+                    Node also had many useful libraries used to video, audio, and image manipulation such as ffmpeg and canvas that was used to make
+                    many of the games like chess or battleship. <span class="fw-bold">MongoDB</span> was also a well-supported tool in node.js that
+                    had the flexibility to store everything we needed in the bot and the website.
+
+                </div>
+
+                <div style="flex: 0.5" class="m-5">
+                    <p style="font-size: 30px" class="text-decoration-underline">
+                        Purpose and Goal
+                    </p>
+                    In late 2018, me and a team of two other people wanted to create a discord bot that could meet the needs
+                    of individuals through customizability.
+                    In the end, there were over 25,000 users who enjoyed the customizability and 24/7 usage that many other discord
+                    bots do not often provide.
+                    Its community helped shape it into what it grew to through suggestions, bug-reports, and donations.
+                    <br><br>
+                    The bot offered many tools for moderation, community engagement, music, games, and other
+                    miscellaneous tools all free and easy to use.
+
+                </div>
+
+            </div>
+
+            <div class="container d-flex flex-row justify-content-around pb-5">
+
+                <div style="flex: 0.5" class="mx-5">
+                    <p class="text-decoration-underline my-3" style="font-size: 30px">
+                        Problems Encountered
+                    </p>
+                    This was one of the first projects that all of us had worked on in a team. Therefore, we had to create
+                    thorough guidelines for developing code together. Coming up with a system where we could all easily
+                    create new commands and handle different events took some time and discussion but the flexibility that
+                    javascript provided gave us the ability to create command and event handlers which allowed us to
+                    split these things into individual files for us to separately develop in without getting in each other's way.
+                </div>
+
+                <div style="flex: 0.5" class="mx-5">
+                    <p class="text-decoration-underline my-3" style="font-size: 30px">
+                        Lessons Learned
+                    </p>
+                    I learned a great deal of being able to communicate with a team and the community you're working for.
+                    Having that customer first mindset helped grow the community around the bot and served to connect me
+                    with other clients looking for their own app.
+                </div>
+
+            </div>
+
+        </div>
+
+    </template>
+
+
+    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 36s;"
+    >
+
+        <div class="d-flex flex-column">
+            <div class="separator-box" style="--height: 500px"></div>
+            <img src="../../images/Dustie-Example-2.png"/>
+            <div class="separator-box"></div>
+            <img src="../../images/Dustie-Example-1.png"/>
+            <div class="separator-box" style="--height: 500px;">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 60s;
+          --start-top-offset: -300px; --start-left-offset: -1700px;
+          --end-top-offset: 400px; --end-left-offset: -500px;
+          --anim-direction: alternate-reverse;
+"
+    >
+
+        <div class="d-flex flex-column position-relative">
+            <div class="separator-box" style="--height: 500px"></div>
+            <img src="../../images/Dustie-Example-3.png" style=""/>
+            <div class="separator-box" style="--height: 500px"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container text-white py-5 px-5 position-relative" style="z-index: 1">
+        <div class="d-flex justify-content-around align-items-center">
+
+            <div class="d-flex flex-column col-4 dustie-content" style="">
+                <div class="d-flex flex-row align-items-center">
+
+                    <p class="h1 text-start align-self-start fadeIn p-1">Dustie</p>
+                    <a href="https://discord.com/developers/docs/intro" title="Discord API" target="_blank">
+                        <i class="fa-brands fa-discord mx-1"></i>
+                    </a>
+                    <a href="https://nodejs.org/en" title="Node.JS" target="_blank">
+                        <i class="fa-brands fa-node-js m-1"></i>
+                    </a>
+
+                    <a href="https://www.mongodb.com" title="Mongo DB" target="_blank">
+                        <i class="icon-mongodb m-1" style="color: #87888a"></i>
+                    </a>
+
+                </div>
+
+                <p class="text-start fadeIn">
+                    A Multi-Purpose Discord bot with many options for moderation, entertainment, music, economy, and
+                    more.
+                    <br>
+                    A high level of customization through a custom dashboard made with Angular
+                </p>
+                <div class="d-flex flex-sm-column flex-md-row justify-content-around">
+                    <a class="btn btn-outline-light btn-lg d-flex justify-content-center align-items-center align-content-between"
+                       href="https://github.com/danield33/DustieBot" target="_blank">
+                <span class="d-none d-md-block mx-2">
+                    Check it on Github
+                </span>
+                        <i class="fa-brands fa-github text-white"></i>
+                    </a>
+                    <button class="btn btn-light" onclick="showModal('dustie1')">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
