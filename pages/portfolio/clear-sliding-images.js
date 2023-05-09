@@ -24,7 +24,7 @@ function hideModal(sectionID) {
     }).hide();
 
     box.parent().parent().css({//reset z-index
-        'z-index': null,
+        'z-index': 0,
         visibility: 'visible'
     }).removeClass('freeze')
         .one('transitionend webkitTransitionEnd oTransitionEnd', () => {
