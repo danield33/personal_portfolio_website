@@ -51,7 +51,7 @@ function hideModal(sectionID) {
             '--height': ''
         }).parent().parent().css({
             'z-index': 0
-        })
+        }).removeClass('freeze')
 
         section.css({//make background default color
             background: '#36393F'
@@ -112,7 +112,6 @@ function showModal(sectionID) {
             'background': '#2a2c30'
         });
         box.hide();
-        layeredImage.removeClass('freeze');
     })
 
     $(element[0]).css({
@@ -140,7 +139,6 @@ function getScaleFactor($biggerElement, $smallerElement) {
     const parentWidth = parent.getBoundingClientRect().width;
     const parentHeight = parent.getBoundingClientRect().height;
     const childWidth = child.getBoundingClientRect().width;
-    console.log(childWidth, $smallerElement.width())
     const childHeight = child.getBoundingClientRect().height;
 
     // console.log(parentWidth, childWidth, 'width');
