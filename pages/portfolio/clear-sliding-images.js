@@ -27,28 +27,11 @@ function hideModal(sectionID) {
         'z-index': null,
         visibility: 'visible'
     }).removeClass('freeze')
-    .one('transitionend webkitTransitionEnd oTransitionEnd', () => {//need to repeat the css modifications twice b/c of css transitions removing changes
-        if(expandedBoxes[sectionID].length === 2){
-            box.find('div').remove();
+        .one('transitionend webkitTransitionEnd oTransitionEnd', () => {
+            box.find('div').remove();//remove 'fake' content on opposite side of expanding box
+            box.off();
 
-            box.show().css({//remove transformations
-                transform: 'none',
-                'z-index': null,
-                '--height': ''
-            }).parent().parent().css({
-                'z-index': null,
-                visibility: 'visible'
-            }).removeClass('freeze')
-
-            section.css({//make background default color
-                background: 'var(--color-primary)'
-            });
-            sectionSplitter.next().remove();
-        }
-
-    });
-
-
+        });
 
     delete expandedBoxes[sectionID];
 
@@ -87,24 +70,23 @@ function showModal(sectionID) {
          translate(${distanceX}px, ${distanceY + sectionSplitter.height()}px) rotateY(180deg) scaleY(200%)`,
     }).one('transitionend webkitTransitionEnd oTransitionEnd', () => {
 
-        if(expandedBoxes[sectionID].length === 1){
-            const element = $(template.clone().html()).insertAfter(sectionSplitter);
+        const element = $(template.clone().html()).insertAfter(sectionSplitter);
 
-            element.removeClass('flipped')
-                .css({
-                    position: 'relative',
-                    'z-index': 10,
-                    'background': 'var(--color-secondary)',
-                    'width': '100%',
-                });
-            expandedBoxes[sectionID].push(element);
-            section.css({
-                'background': 'var(--color-secondary)'
+        element.removeClass('flipped')
+            .css({
+                position: 'relative',
+                'z-index': 10,
+                'background': 'var(--color-secondary)',
+                'width': '100%',
             });
-            box.hide();
-            layeredImage.css('visibility', 'hidden');
-            Prism.highlightAll();
-        }
+        expandedBoxes[sectionID].push(element);
+        section.css({
+            'background': 'var(--color-secondary)'
+        });
+        box.hide();
+        layeredImage.css('visibility', 'hidden');
+        Prism.highlightAll();
+        box.off();
 
     });
 
