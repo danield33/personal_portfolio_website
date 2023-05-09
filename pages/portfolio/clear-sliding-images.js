@@ -22,6 +22,7 @@ function hideModal(sectionID) {
 
     box.parent().parent().css({//reset z-index
         'z-index': '',
+        visibility: 'visible'
     }).removeClass('freeze')
     .one('transitionend webkitTransitionEnd oTransitionEnd', () => {//need to repeat the css modifications twice b/c of css transitions removing changes
         box.find('div').remove();
@@ -31,7 +32,8 @@ function hideModal(sectionID) {
             'z-index': 0,
             '--height': ''
         }).parent().parent().css({
-            'z-index': 0
+            'z-index': 0,
+            visibility: 'visible'
         }).removeClass('freeze')
 
         section.css({//make background default color
@@ -93,6 +95,7 @@ function showModal(sectionID) {
             'background': 'var(--color-secondary)'
         });
         box.hide();
+        layeredImage.css('visibility', 'hidden');
     })
 
     $(element[0]).css({
