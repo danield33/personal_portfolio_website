@@ -7,7 +7,8 @@ const experienceItems = [
     {
         name: 'Dustie',
         description: 'Worked in a team of 5 people to create a multi-purposed discord bot capable of providing music, moderation, multimedia manipulation tools, games, and economy systems.',
-        image: './images/dustie/Dustie.png'
+        image: './images/dustie/Dustie.png',
+        scrollID: 'dustie'
     },
     {
         name: 'Delaware County Auction',
@@ -22,7 +23,8 @@ const experienceItems = [
     {
         name: 'The Edge',
         description: 'A react native mobile app to help coaches manage their teams better',
-        image: 'images/TheEdge.png'
+        image: 'images/TheEdge.png',
+        scrollID: 'the-edge'
     },
 
 ]
@@ -43,10 +45,12 @@ function populateExperience() {
         const timelineItemTitle = clonedItem.find('#timeline-item-title');
         const timelineItemDescription = clonedItem.find('#timeline-item-description');
         const timelineItemImage = clonedItem.find('#timeline-item-image');
+        const anchorTag = clonedItem.find('a.btn');
 
         timelineItemTitle.text(item.name);
         timelineItemDescription.text(item.description);
         timelineItemImage.attr('src', item.image);
+        anchorTag.attr('href', 'pages/portfolio/portfolio.html#'+item.scrollID)
         $timeline.append(clonedItem)
     }
 
