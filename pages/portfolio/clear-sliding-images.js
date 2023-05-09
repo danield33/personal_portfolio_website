@@ -96,11 +96,12 @@ function showModal(sectionID) {
         });
         box.hide();
         layeredImage.css('visibility', 'hidden');
-    })
+        Prism.highlightAll();
+    });
 
     $(element[0]).css({
         'z-index': 2 //moves it above text content
-    })
+    });
 
 }
 

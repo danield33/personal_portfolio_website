@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css"
           integrity="sha512-Cdvnk1SFWqcb3An6gMyqDRH40Js8qmsWcSK10I2gSifCe2LilaPMsHd6DldEvQ3uIlCb1qdRUrNeAFFleOu4xQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link
+            rel="stylesheet"
+            href="../../styles/prism.css"
+    />
+
 </head>
 <body>
 <!--Nav Bar-->
@@ -107,11 +112,11 @@
                         <li><i class="icon-mongodb m-1"></i>MongoDB</li>
                         <li><i class="fa-brands fa-discord mx-1" style="font-size: 15px"></i>Discord.js API</li>
                     </ul>
-                    We used <span class="fw-bold">Node.js</span> to build this program as <span class="fw-bold">discord's API</span>
+                    We used <b>Node.js</b> to build this program as <b>discord's API</b>
                     was best suited and had the best documentation written in javascript.
                     Node also had many useful libraries used to video, audio, and image manipulation such as ffmpeg and
                     canvas that was used to make
-                    many of the games like chess or battleship. <span class="fw-bold">MongoDB</span> was also a
+                    many of the games like chess or battleship. <b>MongoDB</b> was also a
                     well-supported tool in node.js that
                     had the flexibility to store everything we needed in the bot and the website.
 
@@ -287,17 +292,30 @@
                             </svg>
                             Typescript
                         </li>
-                        <li><img src="../../images/icons/firebase.svg">Firebase</li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" id="firebase">
+                                <path fill="white"
+                                      d="M5.239 15.063 7.21 2.381a.453.453 0 0 1 .847-.145l2.12 3.979-4.938 8.848zM19.24 18.14 17.363 6.469a.454.454 0 0 0-.766-.246L4.76 18.14l6.55 3.691c.411.23.912.23 1.323 0l6.607-3.691zM13.917 7.955 12.4 5.052a.452.452 0 0 0-.8 0L4.939 16.989l8.978-9.034z"></path>
+                            </svg>
+                            Firebase
+                        </li>
                         <li><i class="icon-reactjs pe-2"></i>React Native</li>
                         <li><i class="icon-aws m-1"></i>AWS</li>
                     </ul>
-                    We used <span class="fw-bold">Node.js</span> to build this program as <span class="fw-bold">discord's API</span>
-                    was best suited and had the best documentation written in javascript.
-                    Node also had many useful libraries used to video, audio, and image manipulation such as ffmpeg and
-                    canvas that was used to make
-                    many of the games like chess or battleship. <span class="fw-bold">MongoDB</span> was also a
-                    well-supported tool in node.js that
-                    had the flexibility to store everything we needed in the bot and the website.
+                    We chose <b>TypeScript</b> for better code maintainability as our company grows. Its static typing
+                    and
+                    organizational structures make it easier to handle larger codebases compared to JavaScript.
+                    <br>
+                    For the app requested by a softball coach, we needed cross-platform compatibility. <b>React
+                    Native</b>
+                    allowed us to build for both Android and iOS efficiently, with less code required.
+                    <br>
+                    <b>Firebase</b> was initially a great choice as it provides a real-time NoSQL database for
+                    synchronization
+                    and communication. It also offers convenient authentication and user management features.
+                    However, we are transitioning to <b>AWS cloud</b> services for improved scalability, as Firebase did
+                    not
+                    scale well and had pricing limitations after the free tier.
 
                 </div>
 
@@ -305,35 +323,139 @@
                     <p style="font-size: 30px" class="text-decoration-underline">
                         Purpose and Goal
                     </p>
-                    In late 2018, me and a team of two other people wanted to create a discord bot that could meet the
-                    needs
-                    of individuals through customizability.
-                    In the end, there were over 25,000 users who enjoyed the customizability and 24/7 usage that many
-                    other discord
-                    bots do not often provide.
-                    Its community helped shape it into what it grew to through suggestions, bug-reports, and donations.
-                    <br><br>
-                    The bot offered many tools for moderation, community engagement, music, games, and other
-                    miscellaneous tools all free and easy to use.
+                    In 2019, a softball coach was interested in making her workflow digital. Rather than using many
+                    tools to help her coach,
+                    she wanted something where she could do her work in one place.
+                    The Edge is an app to organize youth instructors working privately with athletes/students.
+                    It puts all aspects of training into one place including (but not limited to) scheduling, drills,
+                    measuring progress, communication, payment and notes on training.
+                    <br>
+                    By employing the agile methodology through scrum,
+                    I am able to work with a team of 4 others to get this project off the ground.
 
                 </div>
 
             </div>
 
-            <div class="container d-flex flex-row justify-content-around pb-5">
+            <div class="container d-flex flex-row justify-content-around pb-5" style="flex: 1">
 
-                <div style="flex: 0.5" class="mx-5">
+                <div style="flex: 0.5" class="mx-5 w-50">
                     <p class="text-decoration-underline my-3" style="font-size: 30px">
                         Problems Encountered
                     </p>
-                    This was one of the first projects that all of us had worked on in a team. Therefore, we had to
-                    create
-                    thorough guidelines for developing code together. Coming up with a system where we could all easily
-                    create new commands and handle different events took some time and discussion but the flexibility
-                    that
-                    javascript provided gave us the ability to create command and event handlers which allowed us to
-                    split these things into individual files for us to separately develop in without getting in each
-                    other's way.
+                    A challenge for this project was that it has quite a lot of code for each aspect that a coach would
+                    need.
+                    Therefore, it needs to be testable. However, this testing process did not come to mind at the start
+                    of development
+                    so much of the code had already been developed before we began testing. While Test driven
+                    development
+                    is not must, it is very helpful to ensure your code is testable and in working condition whenever
+                    you refactor code.
+                    Although this repository is private, here is a code snippet of a unit test written.
+
+                    <pre class="language-javascript line-numbers" style="height: 50%">
+
+                    <code class="language-javascript">
+import React from 'react';
+import {
+    fireEvent,
+    render,
+    waitFor
+} from '@testing-library/react-native';
+import LoginScreen from '../login/index';
+
+describe("Login form", () =&gt; {
+
+            const routeMock = (fn) =&gt;
+            ({
+                params: {
+                    params: {
+                        onLogin: fn
+                    }
+                }
+            })
+
+            it("Validates input on correct input", async () =&gt; {
+
+                    const email = 'user@gmail.com';
+                    const password = '12345678';
+
+                    const handleLogin = jest.fn();
+                    const navigation = {
+                        navigate: jest.fn()
+                    };
+
+                    const {
+                        getByLabelText,
+                        getByText
+                    } = render( &lt;LoginScreen navigation = {
+                            navigation
+                        }
+                        route = {
+                            routeMock(handleLogin)
+                        }
+                        /&gt;);
+
+                        const emailInp = getByLabelText('Email');
+                        const passInp = getByLabelText('Password');
+
+                        fireEvent.changeText(emailInp, email); fireEvent.changeText(passInp, password);
+
+                        const submitButton = getByText('Login'); fireEvent.press(submitButton);
+
+
+                        await waitFor(() =&gt; {
+                            expect(handleLogin).toHaveBeenCalledTimes(1);
+                        });
+
+                        expect(handleLogin).toHaveBeenCalledWith({
+                            email,
+                            password,
+                            rememberLogin: false,
+                            username: ''
+                        }, expect.anything())
+
+
+                    });
+
+                it("Correctly navigates to different pages", async () =&gt; {
+
+                        const handleLogin = jest.fn();
+                        const navigation = {
+                            navigate: jest.fn()
+                        };
+
+                        const {
+                            getByLabelText,
+                            getByText
+                        } = render( &lt;LoginScreen navigation = {
+                                navigation
+                            }
+                            route = {
+                                routeMock(handleLogin)
+                            }
+                            /&gt;);
+
+                            const forgotButton = getByLabelText('Forgot Password'); //tests forgot password navigation
+                            fireEvent.press(forgotButton); await waitFor(() =&gt; {
+                                expect(navigation.navigate).toHaveBeenCalledTimes(1);
+                            });
+
+                            expect(navigation.navigate).toHaveBeenCalledWith('ForgotPassword')
+
+                            const createAccountButton = getByLabelText('Create Account'); //tests the create account button navigation
+                            fireEvent.press(createAccountButton); await waitFor(() =&gt; {
+                                expect(navigation.navigate).toHaveBeenCalledTimes(2);
+                            });
+
+                            expect(navigation.navigate).toHaveBeenCalledWith('CreateAccountFlow')
+
+                        })
+
+                });                    </code>
+                    </pre>
+
+
                 </div>
 
                 <div style="flex: 0.5" class="mx-5">
@@ -444,7 +566,7 @@
 <script src="../../scripts/animateOnView.js"></script>
 <script src="../../index.js"></script>
 <script src="./clear-sliding-images.js"></script>
-
+<script src="../../scripts/prism.js"></script>
 
 </body>
 
