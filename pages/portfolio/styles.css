@@ -95,3 +95,7 @@ a > i.fa-brands {
     transform: rotateY(180deg);
     backface-visibility: hidden;
 }
+
+a i {
+    color: #87888a;
+}
