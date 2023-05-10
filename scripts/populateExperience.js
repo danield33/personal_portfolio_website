@@ -18,7 +18,8 @@ const experienceItems = [
     {
         name: 'Rating Shift',
         description: 'A mobile app that lets you search, rate, and discover new apps to download',
-        image: 'images/Rating-Shift.png'
+        image: 'images/Rating-Shift.png',
+        scrollID: 'rating-shift'
     },
     {
         name: 'The Edge',
