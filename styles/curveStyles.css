@@ -72,3 +72,8 @@
     background-image: url('../images/waves/edge-to-rating.svg');
     aspect-ratio: 960/105;
 }
+
+.pandora-layer{
+    background-image: url('../images/waves/rating-to-pandora.svg');
+    aspect-ratio: 960/116;
+}

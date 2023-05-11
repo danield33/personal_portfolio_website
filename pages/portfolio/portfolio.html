@@ -755,6 +755,192 @@ describe("Login form", () =&gt; {
 
 </section>
 
+<!--End Rating Shift Section-->
+
+<section id="pandora-pvp" class="overflow-hidden portfolio-section"
+         style="--color-primary: #ec2c14; --color-secondary: #b20c0a">
+
+    <div class="spacer pandora-layer" style="z-index: 5; position: relative"></div>
+
+
+    <template>
+
+        <div class="flipped align-items-center d-flex align-content-center flex-column container-fluid text-white overflow-scroll pb-5 position-absolute"
+             style="height: 90%">
+
+            <div class="container d-flex flex-row align-items-center justify-content-center">
+                <img src="../../images/Rating-Shift.png" width="200"/>
+                <p class="fw-semibold mx-3" style="font-size: 75px;">
+                    Rating Shift
+                </p>
+                <button class="btn btn-outline-light btn-sm mx-2" onclick="hideModal('pandora-pvp')">Close</button>
+            </div>
+
+
+            <div class="container d-flex flex-row justify-content-around">
+                <div style="flex: 0.5" class="m-5">
+                    <p class="text-decoration-underline" style="font-size: 30px">
+                        Stack and Explanations
+                    </p>
+                    <ul style="list-style-type: none; font-size: 20px">
+                        <li>
+                            <i class="icon-nodejs"></i>
+                            Node.js
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" id="firebase">
+                                <path fill="white"
+                                      d="M5.239 15.063 7.21 2.381a.453.453 0 0 1 .847-.145l2.12 3.979-4.938 8.848zM19.24 18.14 17.363 6.469a.454.454 0 0 0-.766-.246L4.76 18.14l6.55 3.691c.411.23.912.23 1.323 0l6.607-3.691zM13.917 7.955 12.4 5.052a.452.452 0 0 0-.8 0L4.939 16.989l8.978-9.034z"></path>
+                            </svg>
+                            Firebase
+                        </li>
+                        <li><i class="icon-reactjs pe-2"></i>React Native</li>
+                        <!--                        <li style="list-style-type: disc">-->
+
+                        &nbsp;&nbsp;&#8226;&nbsp; Express
+                        <!--                        </li>-->
+                    </ul>
+                    I chose to use node.js, firebase, and react native because I had become pretty familiar with the three
+                    after working on The Edge Coaching project for a while. In addition to these three, I used an <b>express server
+                    in order to communicate between the app and the server that feeds the app information about other apps.</b>
+                    The server web-scrapes information from other sources and interprets the information and passes it onto
+                    the client on the phone.
+
+                </div>
+
+                <div style="flex: 0.5" class="m-5">
+                    <p style="font-size: 30px" class="text-decoration-underline">
+                        Purpose and Goal
+                    </p>
+                    Every year, an organization called
+                    <a href="https://bpa.org" target="_blank" style="color: white"><b>Business Professionals of America</b></a>
+                    hosts an event for different age groups across America. My technical high school, The Delaware Area Career Center,
+                    participates in this each year, and I was selected to attend the national competition for the mobile application development event.
+                    The theme for that year was to create an app that allows you to review a different type of app.
+                    Because of this, I created an app that lets you review, search, and rate all different kinds of app
+                    on both the app store and Google Play Store in one spot.
+
+                </div>
+
+            </div>
+
+            <div class="container d-flex flex-row justify-content-around pb-5" style="flex: 1">
+
+                <div style="flex: 0.5" class="mx-5 w-50">
+                    <p class="text-decoration-underline my-3" style="font-size: 30px">
+                        Problems Encountered
+                    </p>
+                    <div class="d-flex flex-column align-items-center">
+                        <p>
+                            The challenge for creating this app was determining how to get information about other apps to rate.
+                            At first, I wanted to use an api such as 42Matters. However, they had a very limiting free tier that
+                            wouldn't last for the duration I needed. Therefore, I needed to scrape the information right off of various
+                            websites that provided it. However, in react native, it is difficult to web scrape information that is server side rendered.
+                            So I opted to do it on an express server where I could use libraries like <b>puppeteer</b> that could wait for
+                            all the information to be loaded. Using this method allowed me to successfully get information about each app
+                            and rate, review, and search for them accordingly.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+                <div style="flex: 0.5" class="mx-5">
+                    <p class="text-decoration-underline my-3" style="font-size: 30px">
+                        Lessons Learned
+                    </p>
+                    Working on this project, I learned that presentation is everything. Being able to communicate
+                    well with your audience (judges) that may not know all the technical details is very crucial to
+                    gaining support for your work; weather that translates into potential stakeholders or other opportunities for work,
+                    being able to communicate to a non-technical audience is an invaluable skill to all engineers.
+                </div>
+
+            </div>
+
+        </div>
+
+    </template>
+
+
+    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 36s;"
+    >
+
+        <div class="d-flex flex-column">
+            <div class="separator-box" style="--height: 500px"></div>
+            <img src="../../images/rating-shift/login-screen.png"/>
+            <div class="separator-box"></div>
+            <img src="../../images/rating-shift/app-page.png"/>
+            <img src="../../images/rating-shift/app-page-2.png"/>
+            <div class="separator-box" style="--height: 500px;"></div>
+
+        </div>
+
+    </div>
+
+    <div class="position-absolute layered-image slide-right align-content-between d-flex flex-column"
+         style="--slide-duration: 60s;
+          --start-top-offset: -300px; --start-left-offset: -1700px;
+          --end-top-offset: 400px; --end-left-offset: -500px;
+          --anim-direction: alternate-reverse;
+"
+    >
+
+        <div class="d-flex flex-column position-relative">
+            <div class="separator-box" style="--height: 500px"></div>
+            <img src="../../images/rating-shift/search-page.png" style=""/>
+            <div class="separator-box" style="--height: 500px"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container text-white py-5 px-5 position-relative" style="z-index: 1">
+        <div class="d-flex justify-content-around align-items-center">
+
+            <div class="d-flex flex-column col-4 dustie-content" style="">
+                <div class="d-flex flex-row align-items-center">
+
+                    <p class="h1 text-start align-self-start fadeIn p-1">Rating Shift</p>
+                    <a href="https://reactnative.dev" title="React Native" target="_blank">
+                        <i class="icon-reactjs m-2" style="color: darkgrey"></i>
+                    </a>
+                    <a href="https://www.typescriptlang.org" title="Node.js" target="_blank">
+                        <i class="icon-nodejs" style="color: darkgrey;"></i>
+                    </a>
+                    <a href="https://firebase.google.com/" title="Firebase" target="_blank">
+                        <img src="../../images/icons/firebase.svg"/>
+                    </a>
+
+
+                </div>
+
+                <p class="text-start fadeIn">
+                    Rating Shift is an app empowering you to review, rate, and search for any app on the App store or Google Play Store.
+                    This project landed me a spot in the 2020 national Business Professionals of America competition.
+                </p>
+                <div class="d-flex flex-sm-column flex-md-row justify-content-around">
+                    <a class="btn btn-outline-light btn-lg d-flex justify-content-center align-items-center align-content-between"
+                       href="https://github.com/danield33/Rating-Shift" target="_blank">
+                        <span class="d-none d-md-block mx-2">
+                            Check it on Github
+                        </span>
+                        <i class="fa-brands fa-github text-white"></i>
+                    </a>
+                    <button class="btn btn-light" onclick="showModal('pandora-pvp')">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
