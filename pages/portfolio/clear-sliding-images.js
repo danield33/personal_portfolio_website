@@ -30,11 +30,8 @@ function hideModal(sectionID) {
         .one('transitionend webkitTransitionEnd oTransitionEnd', () => {
             box.find('div').remove();//remove 'fake' content on opposite side of expanding box
             box.off();
-
+            delete expandedBoxes[sectionID];
         });
-
-    delete expandedBoxes[sectionID];
-
 }
 
 function showModal(sectionID) {
