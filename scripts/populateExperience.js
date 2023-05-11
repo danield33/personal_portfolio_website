@@ -13,7 +13,8 @@ const experienceItems = [
     {
         name: 'PandoraPVP',
         description: 'A minecraft server with custom plugins to develop a greek mythology theme.',
-        image: 'images/PandoraPvPLogo.webp'
+        image: 'images/PandoraPvPLogo.webp',
+        scrollID: 'pandora-pvp'
     },
     {
         name: 'Rating Shift',
