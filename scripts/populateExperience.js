@@ -7,13 +7,13 @@ const experienceItems = [
     {
         name: 'Dustie',
         description: 'Worked in a team of 5 people to create a multi-purposed discord bot capable of providing music, moderation, multimedia manipulation tools, games, and economy systems.',
-        image: './images/dustie/Dustie.png',
+        image: './images/dustie/Dustie.webp',
         scrollID: 'dustie'
     },
     {
-        name: 'Delaware County Auction',
-        description: 'Created a mobile and desktop app to communicate realtime auction results to an audience.',
-        image: 'images/Deleware-County-Auction.png'
+        name: 'PandoraPVP',
+        description: 'A minecraft server with custom plugins to develop a greek mythology theme.',
+        image: 'images/PandoraPvPLogo.webp'
     },
     {
         name: 'Rating Shift',
@@ -24,7 +24,7 @@ const experienceItems = [
     {
         name: 'The Edge',
         description: 'A react native mobile app to help coaches manage their teams better',
-        image: 'images/TheEdge.png',
+        image: 'images/TheEdge.webp',
         scrollID: 'the-edge'
     },
 
