@@ -25,10 +25,3 @@ function checkScroll() {
 document.addEventListener('scroll', e => {
     checkScroll();
 })
-
-function copyToClipboard(text){
-    if(typeof text !== 'string') text = String(text);
-    navigator.clipboard.writeText(text).then(() => {
-        window.open('https://discordapp.com/users/264521312544751617', '_blank');
-    });
-}
