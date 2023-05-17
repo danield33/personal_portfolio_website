@@ -22,11 +22,13 @@ function checkScroll() {
 }
 
 function toggleContainerClass() {
-    const myDiv = document.getElementById('iconBars');
-    if (window.innerWidth >= 768) { // Greater than or equal to md (768px)
-        myDiv.classList.add('container');
-    } else { // Less than sm (768px)
-        myDiv.classList.remove('container');
+    const iconBars = document.getElementById('iconBars');
+    if(!iconBars.classList.contains('icon-bar')){
+        if (window.innerWidth >= 768) { // Greater than or equal to md (768px)
+            iconBars.classList.add('container');
+        } else { // Less than sm (768px)
+            iconBars.classList.remove('container');
+        }
     }
 }
 

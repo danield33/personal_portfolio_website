@@ -42,7 +42,6 @@ function onShrinkFinish() {
 
     $iconBars.removeClass('container')
         .addClass('icon-bar');
-    // toggleContainerClass();
     $socialBars.css('width', '100%').height('height', '100%');
     $socialBars.attr('class', "")
     $socialBars.children('.icon').removeClass('fa-4x');
