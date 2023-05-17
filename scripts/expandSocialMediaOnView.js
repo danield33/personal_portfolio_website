@@ -40,7 +40,9 @@ function onShrinkFinish() {
     const $iconBars = $('#iconBars');
     const $socialBars = $iconBars.children('div');
 
-    $iconBars.removeClass('container').addClass('icon-bar');
+    $iconBars.removeClass('container')
+        .addClass('icon-bar');
+    // toggleContainerClass();
     $socialBars.css('width', '100%').height('height', '100%');
     $socialBars.attr('class', "")
     $socialBars.children('.icon').removeClass('fa-4x');
@@ -110,7 +112,8 @@ function expandElement() {
     const $templateContent = $iconBars.children('template');
     const $templateCloneContent = $templateContent.contents().clone();
     const $socialBars = $iconBars.children('div');
-    $iconBars.removeClass('icon-bar').addClass('container');
+    $iconBars.removeClass('icon-bar')//.addClass('container');
+    toggleContainerClass();
     const boundingClientRect = $iconBars[0].getBoundingClientRect();
 
     $socialBars.attr('class', $templateCloneContent[1].className);
