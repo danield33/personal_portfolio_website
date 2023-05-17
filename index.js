@@ -22,7 +22,7 @@ function checkScroll() {
 }
 
 function toggleContainerClass() {
-    var myDiv = document.getElementById('iconBars');
+    const myDiv = document.getElementById('iconBars');
     if (window.innerWidth >= 768) { // Greater than or equal to md (768px)
         myDiv.classList.add('container');
     } else { // Less than sm (768px)
