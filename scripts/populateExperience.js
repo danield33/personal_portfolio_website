@@ -41,7 +41,7 @@ function populateExperience() {
 
         const clonedItem = $timelineItem.contents().clone();
 
-        clonedItem.children(0).attr('class', 'fly-in ' + (i % 2 === 0 ? 'right' : 'left'));
+        clonedItem.children(0).addClass((i % 2 === 0 ? 'right' : 'left'))//.attr('class', 'fly-in ' + (i % 2 === 0 ? 'right' : 'left' + clonedItem.children(0).classList));
 
         const $timeline = $('#timeline');
         const timelineItemTitle = clonedItem.find('#timeline-item-title');
