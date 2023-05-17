@@ -21,6 +21,19 @@ function checkScroll() {
 
 }
 
+function toggleContainerClass() {
+    var myDiv = document.getElementById('iconBars');
+    if (window.innerWidth >= 768) { // Greater than or equal to md (768px)
+        myDiv.classList.add('container');
+    } else { // Less than sm (768px)
+        myDiv.classList.remove('container');
+    }
+}
+
+// Call the function on page load and when the window is resized
+toggleContainerClass();
+window.addEventListener('resize', toggleContainerClass);
+
 
 document.addEventListener('scroll', e => {
     checkScroll();

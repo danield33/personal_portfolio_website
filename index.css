@@ -2,6 +2,13 @@
     --fade-duration: 1s;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+body{
+    position: relative
+}
+
 .introContainer {
     background: linear-gradient(270deg, #00b2ff 10%, #00569a 100%);
     height: 100vh;
@@ -40,8 +47,10 @@
 
 #greeting {
     background-color: #F55C38;
-    min-height: 300px
+    min-height: 300px;
+    margin-bottom: -4px;
 }
+
 
 .fadeIn.start {
     animation: fade-in;
@@ -68,10 +77,11 @@ body {
 
 #findMe {
     background-color: white;
+    margin-bottom: -6px;
 }
 
 #portfolio {
-    background-color: #069897
+    background-color: #069897;
 }
 
 
