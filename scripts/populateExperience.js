@@ -11,10 +11,10 @@ const experienceItems = [
         scrollID: 'dustie'
     },
     {
-        name: 'PandoraPVP',
-        description: 'A minecraft server with custom plugins to develop a greek mythology theme.',
-        image: 'images/PandoraPvPLogo.webp',
-        scrollID: 'pandora-pvp'
+        name: 'The Edge',
+        description: 'A react native mobile app to help coaches manage their teams better',
+        image: 'images/TheEdge.webp',
+        scrollID: 'the-edge'
     },
     {
         name: 'Rating Shift',
@@ -22,13 +22,13 @@ const experienceItems = [
         image: 'images/Rating-Shift.png',
         scrollID: 'rating-shift'
     },
-    {
-        name: 'The Edge',
-        description: 'A react native mobile app to help coaches manage their teams better',
-        image: 'images/TheEdge.webp',
-        scrollID: 'the-edge'
-    },
 
+    {
+        name: 'PandoraPVP',
+        description: 'A minecraft server with custom plugins to develop a greek mythology theme.',
+        image: 'images/PandoraPvPLogo.webp',
+        scrollID: 'pandora-pvp'
+    },
 ]
 
 function populateExperience() {
@@ -41,7 +41,7 @@ function populateExperience() {
 
         const clonedItem = $timelineItem.contents().clone();
 
-        clonedItem.children(0).addClass((i % 2 === 0 ? 'right' : 'left'))//.attr('class', 'fly-in ' + (i % 2 === 0 ? 'right' : 'left' + clonedItem.children(0).classList));
+        clonedItem.children(0).addClass((i % 2 === 0 ? 'right' : 'left'))
 
         const $timeline = $('#timeline');
         const timelineItemTitle = clonedItem.find('#timeline-item-title');
