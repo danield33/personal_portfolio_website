@@ -77,7 +77,8 @@ body {
 
 #findMe {
     background-color: white;
-    margin-bottom: -6px;
+    margin-bottom: -3px;
+    margin-top: 2px;
 }
 
 #portfolio {
