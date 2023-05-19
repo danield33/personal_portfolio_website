@@ -6,30 +6,35 @@
  */
 function listenForScroll() {
 
-    const $findMe = $('#findMe');
-    const observer = new IntersectionObserver((entries) => {
 
-        entries.forEach(entry => {
 
-            console.log($(window).scrollTop(), $findMe.offset().top)
-            $('#iconBars').children('div').stop()
-            if (entry.isIntersecting && entry.time > 500 && $(window).scrollTop() < $findMe.offset().top) {//check if user is above or below the div
-                expandElement();
-            } else if (!entry.isIntersecting && $(window).scrollTop() < $findMe.offset().top) {
-                shrinkElement();
+        const $findMe = $('#findMe');
+        const observer = new IntersectionObserver((entries) => {
+            if(window.innerWidth >= 768) {//only do on larger devices
+
+                entries.forEach(entry => {
+
+                    console.log($(window).scrollTop(), $findMe.offset().top)
+                    $('#iconBars').children('div').stop()
+                    if (entry.isIntersecting && entry.time > 500 && $(window).scrollTop() < $findMe.offset().top) {//check if user is above or below the div
+                        expandElement();
+                    } else if (!entry.isIntersecting && $(window).scrollTop() < $findMe.offset().top) {
+                        shrinkElement();
+                    }
+
+                })
             }
 
-        })
+
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0
+        });
 
 
-    }, {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0
-    });
+        $findMe.each((index, elem) => observer.observe(elem));
 
-
-    $findMe.each((index, elem) => observer.observe(elem));
 
 }
 
