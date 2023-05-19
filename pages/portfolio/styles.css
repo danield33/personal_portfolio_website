@@ -38,6 +38,8 @@ a > i.fa-brands {
 }
 
 .layered-image {
+    -webkit-transform: matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
+    -ms-transform: matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
     transform: matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
     top: 0;
     left: 0;
@@ -57,20 +59,37 @@ a > i.fa-brands {
 }
 
 .layered-image.slide-right {
+    -webkit-animation: right-slide var(--slide-duration) ease-in-out infinite;
     animation: right-slide var(--slide-duration) ease-in-out infinite;
+    -webkit-animation-direction: var(--anim-direction);
     animation-direction: var(--anim-direction)
 }
 
 .layered-image.slide-right.freeze{
+    -webkit-animation-play-state: paused;
     animation-play-state: paused
+}
+
+
+@-webkit-keyframes right-slide {
+    0%, 1% {
+        -webkit-transform: translate(var(--start-left-offset), var(--start-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
+        transform: translate(var(--start-left-offset), var(--start-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
+    }
+    99%, 100% {
+        -webkit-transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
+        transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
+    }
 }
 
 
 @keyframes right-slide {
     0%, 1% {
+        -webkit-transform: translate(var(--start-left-offset), var(--start-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
         transform: translate(var(--start-left-offset), var(--start-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
     }
     99%, 100% {
+        -webkit-transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
         transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
     }
 }
@@ -90,12 +109,17 @@ a > i.fa-brands {
     height: var(--height);
     margin-top: 300px;
     margin-bottom: 300px;
+    -webkit-transition: all cubic-bezier(0.1, 0, 0.9, 1) 1s;
+    -o-transition: all cubic-bezier(0.1, 0, 0.9, 1) 1s;
     transition: all cubic-bezier(0.1, 0, 0.9, 1) 1s;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
 
 .flipped{
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 

@@ -1,12 +1,12 @@
-.image-short-description{
+.image-short-description {
 
     width: 25%;
     margin-right: 20px;
 
 }
 
-@media(max-width: 768px){
-    .image-short-description{
+@media (max-width: 768px) {
+    .image-short-description {
         width: 50%;
     }
 }
