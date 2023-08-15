@@ -11,7 +11,7 @@ function toggleFadeInOnScroll(){
                 $target.css('visibility', 'visible').addClass('start')
                 observer.unobserve(entry.target);
             }
-        })
+        })//victoria 
 
 
     }, {

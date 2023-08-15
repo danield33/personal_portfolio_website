@@ -60,7 +60,7 @@ a > i.fa-brands {
 
 .layered-image.slide-right {
     -webkit-animation: right-slide var(--slide-duration) ease-in-out infinite;
-    animation: right-slide var(--slide-duration) ease-in-out infinite;
+    animation: right-slide-small var(--slide-duration) ease-in-out infinite;
     -webkit-animation-direction: var(--anim-direction);
     animation-direction: var(--anim-direction)
 }
@@ -68,6 +68,15 @@ a > i.fa-brands {
 .layered-image.slide-right.freeze{
     -webkit-animation-play-state: paused;
     animation-play-state: paused
+}
+
+@media(max-width: 789px){
+    .layered-image.slide-right {
+        -webkit-animation: right-slide-small var(--slide-duration) ease-in-out infinite;
+        animation: right-slide-small var(--slide-duration) ease-in-out infinite;
+        -webkit-animation-direction: var(--anim-direction);
+        animation-direction: var(--anim-direction)
+    }
 }
 
 
@@ -87,6 +96,28 @@ a > i.fa-brands {
     0%, 1% {
         -webkit-transform: translate(var(--start-left-offset), var(--start-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
         transform: translate(var(--start-left-offset), var(--start-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
+    }
+    99%, 100% {
+        -webkit-transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
+        transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
+    }
+}
+
+@keyframes right-slide-small {
+    0%, 1% {
+        -webkit-transform: translate(calc(var(--start-left-offset) + 500px), calc(var(--start-top-offset) + 500px)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
+        transform: translate(calc(var(--start-left-offset) + 500px), calc(var(--start-top-offset) + 500px)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
+    }
+    99%, 100% {
+        -webkit-transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
+        transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
+    }
+}
+
+@-webkit-keyframes right-slide-small {
+    0%, 1% {
+        -webkit-transform: translate(calc(var(--start-left-offset) + 500px), calc(var(--start-top-offset) + 500px)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);
+        transform: translate(calc(var(--start-left-offset) + 500px), calc(var(--start-top-offset) + 500px)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0)
     }
     99%, 100% {
         -webkit-transform: translate(var(--end-left-offset), var(--end-top-offset)) matrix(0.27, -0.04, 0.21, 0.17, 0, 0);

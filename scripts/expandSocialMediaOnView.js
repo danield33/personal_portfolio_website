@@ -1,3 +1,5 @@
+expandElement();//disabling this feature for now
+
 /**
  * Monitors the elements of #findMe to check if the user has scrolled into and out of the findMe div.
  * When the user scrolls into it, the social media bar animates into a relative element with buttons on it
@@ -140,5 +142,5 @@ function expandElement() {
 }
 // const $iconBars = ;
 $('#iconBars').append($('#iconBars').children('template').contents().clone());
-listenForScroll();
+// listenForScroll();
 

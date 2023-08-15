@@ -12,20 +12,21 @@ const experienceItems = [
     },
     {
         name: 'The Edge',
-        description: 'A react native mobile app to help coaches manage their teams better',
+        description: 'Working with a team of developers and a product owner to create a react native mobile app to help coaches manage their teams better.',
         image: 'images/TheEdge.webp',
         scrollID: 'the-edge'
     },
     {
         name: 'Rating Shift',
-        description: 'A mobile app that lets you search, rate, and discover new apps to download',
+        description: 'A mobile app that lets you search, rate, and discover new apps to download. This project won a top 5 in a national competition',
         image: 'images/Rating-Shift.png',
         scrollID: 'rating-shift'
     },
 
     {
         name: 'PandoraPVP',
-        description: 'A minecraft server with custom plugins to develop a greek mythology theme.',
+        description: 'A minecraft server with custom plugins to develop a greek mythology theme. This garnered a large community that gave a lot of public' +
+            ' communication and community engagement opportunities',
         image: 'images/PandoraPvPLogo.webp',
         scrollID: 'pandora-pvp'
     },
