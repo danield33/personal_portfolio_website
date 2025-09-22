@@ -52,6 +52,11 @@ a > i.fa-brands {
     border-width: 30px;
     border-style: solid;
     border-color: var(--color-secondary);
+    transition: transform ease-in-out 0.3s ;
+}
+
+.layered-image img:hover{
+    transform: scale(1.05);
 }
 
 .discord-bgcolor {
