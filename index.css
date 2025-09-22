@@ -2,11 +2,20 @@
     --fade-duration: 1s;
 }
 
+html{
+    scrollbar-width: none;
+}
+
 html, body {
     overflow-x: hidden;
+    -ms-overflow-style: none;
 }
 body{
     position: relative
+}
+
+body::-webkit-scrollbar, body::-webkit-scrollbar-button {
+    display: none;
 }
 
 .introContainer {
